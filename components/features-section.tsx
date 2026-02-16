@@ -1,0 +1,105 @@
+"use client"
+
+import { useScrollAnimation } from "@/hooks/use-scroll-animation"
+import {
+  Video,
+  Timer,
+  BarChart3,
+  HelpCircle,
+  MessageCircle,
+} from "lucide-react"
+
+const features = [
+  {
+    icon: Video,
+    title: "オンライン自習室",
+    description:
+      "カメラON/OFFどちらでもOK。仲間がいる環境で、自然と集中力がアップ。",
+  },
+  {
+    icon: Timer,
+    title: "ポモドーロチャンネル",
+    description:
+      "25分+5分休憩 / 85分+5分休憩の2パターン。時間管理で集中力を最大化。",
+  },
+  {
+    icon: BarChart3,
+    title: "学習記録",
+    description:
+      "自分の勉強時間や頑張りを数値で確認。モチベーション維持に役立つ。",
+  },
+  {
+    icon: HelpCircle,
+    title: "質問チャンネル",
+    description:
+      "わからないことを質問して解決。みんなで教え合う文化がここにある。",
+  },
+  {
+    icon: MessageCircle,
+    title: "雑談チャンネル",
+    description:
+      "勉強の合間にリラックス。同じ目標を持つ仲間との交流の場。",
+  },
+]
+
+export function FeaturesSection() {
+  const { ref, isVisible } = useScrollAnimation()
+
+  return (
+    <section id="features" className="bg-secondary py-20 md:py-28">
+      <div
+        ref={ref}
+        className={`mx-auto max-w-6xl px-4 transition-all duration-700 md:px-8 ${
+          isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+        }`}
+      >
+        <div className="mb-16 text-center">
+          <p className="mb-3 text-sm font-semibold tracking-wider text-primary">
+            FREE FEATURES
+          </p>
+          <h2 className="mb-4 text-2xl font-bold text-foreground md:text-4xl">
+            無料でできること
+          </h2>
+          <p className="mx-auto max-w-xl text-base leading-relaxed text-muted-foreground">
+            これだけの機能が、すべて無料。
+            <br />
+            まずは気軽に始めてみてください。
+          </p>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {features.map((feature, index) => (
+            <div
+              key={feature.title}
+              className="group rounded-2xl border border-border bg-background p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md md:p-8"
+              style={{
+                transitionDelay: isVisible ? `${index * 100}ms` : "0ms",
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? "translateY(0)" : "translateY(16px)",
+              }}
+            >
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/20">
+                <feature.icon className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="mb-2 text-lg font-bold text-foreground">
+                {feature.title}
+              </h3>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                {feature.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-6 py-3 text-sm font-semibold text-primary">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
+              {'0'}
+            </span>
+            {'すべて無料で利用できます'}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
