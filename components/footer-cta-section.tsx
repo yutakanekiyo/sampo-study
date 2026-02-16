@@ -3,6 +3,7 @@
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export function FooterCTASection() {
   const { ref, isVisible } = useScrollAnimation()
@@ -83,24 +84,24 @@ export function FooterCTASection() {
         <div className="mx-auto mt-8 max-w-6xl border-t border-border px-4 pt-6 md:px-8">
           <div className="flex flex-col items-center gap-4">
             <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
-              <a
-                href="#"
+              <Link
+                href="/legal/tokushoho"
                 className="text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 特定商取引法に基づく表記
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href="/legal/privacy"
                 className="text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 プライバシーポリシー
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href="/legal/terms"
                 className="text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
                 利用規約
-              </a>
+              </Link>
             </div>
             <p className="text-xs text-muted-foreground">
               &copy; {new Date().getFullYear()} 株式会社三歩 All rights reserved.
