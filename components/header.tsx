@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
 
@@ -12,31 +12,18 @@ const navLinks = [
 ]
 
 export function Header() {
-  const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/95 shadow-sm backdrop-blur-md"
-          : "bg-transparent"
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background shadow-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-8">
         <a href="#" className="flex items-center gap-2">
           <Image
             src="/images/sampo-logo.jpg"
             alt="SAMPO STUDY ロゴ"
-            width={140}
-            height={48}
-            className="h-8 w-auto md:h-10"
+            width={210}
+            height={72}
+            className="h-12 w-auto rounded-lg md:h-14"
             priority
           />
         </a>
@@ -52,7 +39,7 @@ export function Header() {
             </a>
           ))}
           <a
-            href="https://discord.gg/sampostudy"
+            href="https://discord.gg/NvG9Wng4"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
@@ -71,7 +58,7 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-border bg-background/98 backdrop-blur-md md:hidden">
+        <div className="border-t border-border bg-background md:hidden">
           <nav className="flex flex-col px-4 py-4">
             {navLinks.map((link) => (
               <a
@@ -84,7 +71,7 @@ export function Header() {
               </a>
             ))}
             <a
-              href="https://discord.gg/sampostudy"
+              href="https://discord.gg/NvG9Wng4"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2 rounded-lg bg-primary px-5 py-3 text-center text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"

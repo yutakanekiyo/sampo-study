@@ -156,7 +156,7 @@ export function PricingSection() {
               </ul>
 
               <a
-                href="https://discord.gg/sampostudy"
+                href="https://discord.gg/NvG9Wng4"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-bold transition-all ${

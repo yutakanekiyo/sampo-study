@@ -12,15 +12,15 @@ export function HeroSection() {
       </div>
 
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center px-4 py-20 text-center md:px-8 md:py-32">
-        <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-2 text-sm text-primary-foreground/80">
+        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-5 py-2.5 text-sm font-bold text-primary-foreground">
           <span className="inline-block h-2 w-2 rounded-full bg-emerald-300" />
-          Discord上の学習プラットフォーム
+          完全無料 - 0円で今すぐ始められる
         </div>
 
         <h1 className="mb-6 max-w-3xl font-display text-3xl font-extrabold leading-tight tracking-tight text-primary-foreground text-balance md:text-5xl lg:text-6xl">
-          ひとりじゃないから、
+          今日の一歩、明日への二歩、
           <br />
-          <span className="text-emerald-300">続けられる。</span>
+          <span className="text-emerald-300">未来への三歩</span>
         </h1>
 
         <p className="mb-10 max-w-xl text-base leading-relaxed text-primary-foreground/80 text-pretty md:text-lg">
@@ -31,7 +31,7 @@ export function HeroSection() {
 
         <div className="flex flex-col items-center gap-4 sm:flex-row">
           <a
-            href="https://discord.gg/sampostudy"
+            href="https://discord.gg/NvG9Wng4"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center gap-2 rounded-xl bg-primary-foreground px-8 py-4 text-base font-bold text-primary shadow-lg transition-all hover:shadow-xl hover:brightness-95"

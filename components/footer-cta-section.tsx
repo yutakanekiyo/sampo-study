@@ -31,7 +31,7 @@ export function FooterCTASection() {
             あなたの挑戦を、SAMPO STUDYが応援します。
           </p>
           <a
-            href="https://discord.gg/sampostudy"
+            href="https://discord.gg/NvG9Wng4"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 rounded-xl bg-primary-foreground px-8 py-4 text-base font-bold text-primary shadow-lg transition-all hover:shadow-xl hover:brightness-95"
@@ -49,9 +49,9 @@ export function FooterCTASection() {
             <Image
               src="/images/sampo-logo.jpg"
               alt="SAMPO STUDY ロゴ"
-              width={120}
-              height={40}
-              className="h-8 w-auto"
+              width={180}
+              height={60}
+              className="h-12 w-auto rounded-lg"
             />
             <p className="text-xs text-muted-foreground">
               挑戦するすべての人に、公平な機会と正しい設計を。
@@ -69,7 +69,7 @@ export function FooterCTASection() {
               X
             </a>
             <a
-              href="https://discord.gg/sampostudy"
+              href="https://discord.gg/NvG9Wng4"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-muted-foreground transition-colors hover:text-primary"
@@ -80,10 +80,32 @@ export function FooterCTASection() {
           </div>
         </div>
 
-        <div className="mx-auto mt-8 max-w-6xl border-t border-border px-4 pt-6 text-center md:px-8">
-          <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} 株式会社三歩 All rights reserved.
-          </p>
+        <div className="mx-auto mt-8 max-w-6xl border-t border-border px-4 pt-6 md:px-8">
+          <div className="flex flex-col items-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+              <a
+                href="#"
+                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                特定商取引法に基づく表記
+              </a>
+              <a
+                href="#"
+                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                プライバシーポリシー
+              </a>
+              <a
+                href="#"
+                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                利用規約
+              </a>
+            </div>
+            <p className="text-xs text-muted-foreground">
+              &copy; {new Date().getFullYear()} 株式会社三歩 All rights reserved.
+            </p>
+          </div>
         </div>
       </footer>
     </>
