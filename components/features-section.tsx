@@ -8,6 +8,7 @@ import {
   HelpCircle,
   MessageCircle,
 } from "lucide-react"
+import Image from "next/image"
 
 function ImagePlaceholder({
   label,
@@ -116,11 +117,15 @@ export function FeaturesSection() {
             </div>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
-            <ImagePlaceholder
-              label="[画像B] 学習記録の成果物スクリーンショット"
-              aspectRatio="aspect-[16/9]"
-              className="w-full"
-            />
+            <div className="overflow-hidden rounded-xl border border-border">
+              <Image
+                src="/images/dashboard.png"
+                alt="SAMPO STUDYの学習ダッシュボード"
+                width={1200}
+                height={675}
+                className="h-auto w-full"
+              />
+            </div>
             <ImagePlaceholder
               label="[画像D] 自動記録されている様子のスクリーンショット"
               aspectRatio="aspect-[16/9]"

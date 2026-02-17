@@ -1,24 +1,7 @@
 "use client"
 
 import { ArrowRight } from "lucide-react"
-
-function ImagePlaceholder({
-  label,
-  aspectRatio = "aspect-video",
-  className = "",
-}: {
-  label: string
-  aspectRatio?: string
-  className?: string
-}) {
-  return (
-    <div
-      className={`flex items-center justify-center rounded-xl bg-muted/60 transition-colors hover:bg-muted ${aspectRatio} ${className}`}
-    >
-      <p className="px-4 text-center text-sm text-muted-foreground">{label}</p>
-    </div>
-  )
-}
+import Image from "next/image"
 
 export function HeroSection() {
   return (
@@ -89,11 +72,16 @@ export function HeroSection() {
 
       {/* Image A: Main visual - spans full width below hero content */}
       <div className="relative z-10 mx-auto max-w-5xl px-4 pb-20 md:px-8">
-        <ImagePlaceholder
-          label="[画像A] みんなと一緒に勉強しているイメージ画像"
-          aspectRatio="aspect-[16/9]"
-          className="w-full shadow-2xl"
-        />
+        <div className="overflow-hidden rounded-xl shadow-2xl">
+          <Image
+            src="/images/study-room.png"
+            alt="SAMPO STUDYのオンライン自習室の様子"
+            width={1280}
+            height={720}
+            className="h-auto w-full"
+            priority
+          />
+        </div>
       </div>
 
       {/* Bottom wave */}
