@@ -63,8 +63,18 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-noto-sans-jp)", "sans-serif"],
-        display: ["var(--font-nunito)", "var(--font-noto-sans-jp)", "sans-serif"],
+        sans: [
+          "var(--font-roboto)",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "sans-serif",
+        ],
+        display: [
+          "var(--font-inter)",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "sans-serif",
+        ],
       },
       borderRadius: {
         lg: "var(--radius)",
