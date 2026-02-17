@@ -9,38 +9,23 @@ import {
   MessageCircle,
 } from "lucide-react"
 
-const features = [
-  {
-    icon: Video,
-    title: "オンライン自習室",
-    description:
-      "カメラON/OFFどちらでも参加可能。家だと集中できない、一人だと続かない——そんな悩みを解決するオンラインの学習空間。画面の向こうに仲間がいるだけで、自然と机に向かえる。塾のような緊張感を、自宅にいながら再現できる。",
-  },
-  {
-    icon: Timer,
-    title: "ポモドーロチャンネル",
-    description:
-      "「25分勉強＋5分休憩」と「85分勉強＋5分休憩」の2つのリズムから選べる。自分に合ったペースで集中と休憩を繰り返すことで、長時間の勉強でもダレずに続けられる。タイマーに合わせてみんなで一斉に勉強するから、一人では作れないリズムが生まれる。",
-  },
-  {
-    icon: BarChart3,
-    title: "学習記録",
-    description:
-      "勉強した時間や日数が自動で数値として記録される。「今日は何時間やった」「今週はこれだけ頑張れた」が一目でわかるから、自分の努力が見える形で積み上がっていく。モチベーションの維持に直結する機能。",
-  },
-  {
-    icon: HelpCircle,
-    title: "質問チャンネル",
-    description:
-      "勉強中にわからないところがあれば、質問チャンネルに投稿できる。同じ受験生同士で教え合える環境があるから、一人で悩んで止まる時間を減らせる。",
-  },
-  {
-    icon: MessageCircle,
-    title: "雑談チャンネル",
-    description:
-      "勉強ばかりだと息が詰まる。雑談チャンネルでは、同じ目標を持つ仲間と気軽に話せる。休憩時間のちょっとした会話が、また勉強に向かうエネルギーになる。",
-  },
-]
+function ImagePlaceholder({
+  label,
+  aspectRatio = "aspect-video",
+  className = "",
+}: {
+  label: string
+  aspectRatio?: string
+  className?: string
+}) {
+  return (
+    <div
+      className={`flex items-center justify-center rounded-xl bg-muted/60 transition-colors hover:bg-muted ${aspectRatio} ${className}`}
+    >
+      <p className="px-4 text-center text-sm text-muted-foreground">{label}</p>
+    </div>
+  )
+}
 
 export function FeaturesSection() {
   const { ref, isVisible } = useScrollAnimation()
@@ -67,28 +52,136 @@ export function FeaturesSection() {
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature, index) => (
-            <div
-              key={feature.title}
-              className="group rounded-2xl border border-border bg-background p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md md:p-8"
-              style={{
-                transitionDelay: isVisible ? `${index * 100}ms` : "0ms",
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? "translateY(0)" : "translateY(16px)",
-              }}
-            >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 transition-colors group-hover:bg-primary/20">
-                <feature.icon className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="mb-2 text-lg font-bold text-foreground">
-                {feature.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                {feature.description}
+        {/* Feature 1: Online study room - full width */}
+        <div
+          className="mb-6 rounded-2xl border border-border bg-background p-6 shadow-sm transition-all duration-500 md:p-8"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? "translateY(0)" : "translateY(16px)",
+          }}
+        >
+          <div className="flex items-start gap-4 mb-4">
+            <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10">
+              <Video className="h-6 w-6 text-primary" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground">オンライン自習室</h3>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                カメラON/OFFどちらでも参加可能。家だと集中できない、一人だと続かない——そんな悩みを解決するオンラインの学習空間。画面の向こうに仲間がいるだけで、自然と机に向かえる。塾のような緊張感を、自宅にいながら再現できる。
               </p>
             </div>
-          ))}
+          </div>
+        </div>
+
+        {/* Feature 2: Pomodoro - full width */}
+        <div
+          className="mb-6 rounded-2xl border border-border bg-background p-6 shadow-sm transition-all duration-500 md:p-8"
+          style={{
+            transitionDelay: isVisible ? "100ms" : "0ms",
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? "translateY(0)" : "translateY(16px)",
+          }}
+        >
+          <div className="flex items-start gap-4 mb-4">
+            <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10">
+              <Timer className="h-6 w-6 text-primary" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground">ポモドーロチャンネル</h3>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                {'「25分勉強＋5分休憩」と「85分勉強＋5分休憩」の2つのリズムから選べる。自分に合ったペースで集中と休憩を繰り返すことで、長時間の勉強でもダレずに続けられる。タイマーに合わせてみんなで一斉に勉強するから、一人では作れないリズムが生まれる。'}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Feature 3: Study records - with images B & D side by side */}
+        <div
+          className="mb-6 rounded-2xl border border-border bg-background p-6 shadow-sm transition-all duration-500 md:p-8"
+          style={{
+            transitionDelay: isVisible ? "200ms" : "0ms",
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? "translateY(0)" : "translateY(16px)",
+          }}
+        >
+          <div className="flex items-start gap-4 mb-6">
+            <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10">
+              <BarChart3 className="h-6 w-6 text-primary" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground">学習記録</h3>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                {'勉強した時間や日数が自動で数値として記録される。「今日は何時間やった」「今週はこれだけ頑張れた」が一目でわかるから、自分の努力が見える形で積み上がっていく。モチベーションの維持に直結する機能。'}
+              </p>
+            </div>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            <ImagePlaceholder
+              label="[画像B] 学習記録の成果物スクリーンショット"
+              aspectRatio="aspect-[16/9]"
+              className="w-full"
+            />
+            <ImagePlaceholder
+              label="[画像D] 自動記録されている様子のスクリーンショット"
+              aspectRatio="aspect-[16/9]"
+              className="w-full"
+            />
+          </div>
+        </div>
+
+        {/* Feature 4: Q&A channel - with image C */}
+        <div
+          className="mb-6 rounded-2xl border border-border bg-background p-6 shadow-sm transition-all duration-500 md:p-8"
+          style={{
+            transitionDelay: isVisible ? "300ms" : "0ms",
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? "translateY(0)" : "translateY(16px)",
+          }}
+        >
+          <div className="flex flex-col gap-6 md:flex-row md:items-start">
+            <div className="flex-1">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                  <HelpCircle className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-foreground">質問チャンネル</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                    勉強中にわからないところがあれば、質問チャンネルに投稿できる。同じ受験生同士で教え合える環境があるから、一人で悩んで止まる時間を減らせる。
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="w-full md:w-[60%]">
+              <ImagePlaceholder
+                label="[画像C] 早稲田志望者チャンネルの会話スクリーンショット"
+                aspectRatio="aspect-[16/9]"
+                className="w-full"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Feature 5: Chat channel */}
+        <div
+          className="mb-6 rounded-2xl border border-border bg-background p-6 shadow-sm transition-all duration-500 md:p-8"
+          style={{
+            transitionDelay: isVisible ? "400ms" : "0ms",
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? "translateY(0)" : "translateY(16px)",
+          }}
+        >
+          <div className="flex items-start gap-4">
+            <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10">
+              <MessageCircle className="h-6 w-6 text-primary" />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground">雑談チャンネル</h3>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                勉強ばかりだと息が詰まる。雑談チャンネルでは、同じ目標を持つ仲間と気軽に話せる。休憩時間のちょっとした会話が、また勉強に向かうエネルギーになる。
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="mt-12 text-center">

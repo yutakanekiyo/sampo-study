@@ -2,31 +2,47 @@
 
 import { ArrowRight } from "lucide-react"
 
+function ImagePlaceholder({
+  label,
+  aspectRatio = "aspect-video",
+  className = "",
+}: {
+  label: string
+  aspectRatio?: string
+  className?: string
+}) {
+  return (
+    <div
+      className={`flex items-center justify-center rounded-xl bg-muted/60 transition-colors hover:bg-muted ${aspectRatio} ${className}`}
+    >
+      <p className="px-4 text-center text-sm text-muted-foreground">{label}</p>
+    </div>
+  )
+}
+
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-primary pt-16 md:min-h-screen">
+    <section className="relative overflow-hidden bg-primary pt-16">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-primary-foreground/20 blur-3xl" />
         <div className="absolute -bottom-32 -left-32 h-[500px] w-[500px] rounded-full bg-primary-foreground/10 blur-3xl" />
       </div>
 
-      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center px-4 py-20 text-center md:px-8 md:py-32">
-        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-5 py-2.5 text-sm font-bold text-primary-foreground">
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center px-4 py-20 text-center md:px-8 md:py-28">
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-5 py-2.5 text-sm font-bold text-primary-foreground">
           <span className="inline-block h-2 w-2 rounded-full bg-emerald-300" />
           完全無料 - 0円で今すぐ始められる
         </div>
 
-        <h1 className="mb-6 max-w-3xl font-display text-3xl font-extrabold leading-tight tracking-tight text-primary-foreground text-balance md:text-5xl lg:text-6xl">
-          今日の一歩、明日への二歩、
-          <br />
-          <span className="text-emerald-300">未来への三歩</span>
+        <h1 className="mb-6 max-w-3xl font-display text-4xl font-extrabold leading-tight tracking-tight text-primary-foreground md:text-6xl lg:text-7xl">
+          もう1人じゃない
         </h1>
 
         <p className="mb-10 max-w-xl text-base leading-relaxed text-primary-foreground/80 text-pretty md:text-lg">
-          Discordで繋がるオンライン自習室。
+          Discordで繋がる、完全無料のオンライン自習室。
           <br className="hidden md:block" />
-          無料で、いつでも、仲間と一緒に。
+          いつでも、どこでも、仲間と一緒に。
         </p>
 
         <div className="flex flex-col items-center gap-4 sm:flex-row">
@@ -47,7 +63,7 @@ export function HeroSection() {
           </a>
         </div>
 
-        <div className="mt-16 flex flex-wrap items-center justify-center gap-8 text-primary-foreground/60 md:gap-12">
+        <div className="mt-14 flex flex-wrap items-center justify-center gap-8 text-primary-foreground/60 md:gap-12">
           <div className="flex flex-col items-center">
             <span className="font-display text-2xl font-bold text-primary-foreground md:text-3xl">
               0
@@ -69,6 +85,15 @@ export function HeroSection() {
             <span className="text-xs md:text-sm">ベースで簡単</span>
           </div>
         </div>
+      </div>
+
+      {/* Image A: Main visual - spans full width below hero content */}
+      <div className="relative z-10 mx-auto max-w-5xl px-4 pb-20 md:px-8">
+        <ImagePlaceholder
+          label="[画像A] みんなと一緒に勉強しているイメージ画像"
+          aspectRatio="aspect-[16/9]"
+          className="w-full shadow-2xl"
+        />
       </div>
 
       {/* Bottom wave */}

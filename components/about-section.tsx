@@ -1,7 +1,30 @@
 "use client"
 
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
-import { Monitor, Bot, CalendarCheck } from "lucide-react"
+import { Monitor, Users, Clock, Shield } from "lucide-react"
+
+const points = [
+  {
+    icon: Monitor,
+    title: "Discordで運営",
+    description: "普段使い慣れたDiscordだから、新しいアプリをインストールする必要なし。",
+  },
+  {
+    icon: Users,
+    title: "仲間がいる環境",
+    description: "同じ目標を持つ仲間と繋がれる。一人じゃないから続けられる。",
+  },
+  {
+    icon: Clock,
+    title: "24時間利用可能",
+    description: "早朝でも深夜でも、自分のペースで好きなときに勉強できる。",
+  },
+  {
+    icon: Shield,
+    title: "完全無料",
+    description: "すべての機能が0円。登録も月額もクレジットカードも一切不要。",
+  },
+]
 
 export function AboutSection() {
   const { ref, isVisible } = useScrollAnimation()
@@ -22,67 +45,36 @@ export function AboutSection() {
             SAMPO STUDYとは
           </h2>
           <p className="mx-auto max-w-2xl text-base leading-relaxed text-muted-foreground">
-            Discord上で運営されるオンライン学習プラットフォーム。
+            Discord上で運営される、完全無料のオンライン自習室。
             <br className="hidden md:block" />
-            無料の自習室を土台に、AIを活用した有料プランでさらに学びを深められます。
+            家だと集中できない。一人だと続かない。
+            <br className="hidden md:block" />
+            そんな悩みを、仲間と一緒に解決する場所です。
           </p>
         </div>
 
-        {/* Layer diagram */}
-        <div className="mx-auto max-w-2xl">
-          {/* Outer layer - free */}
-          <div className="rounded-2xl border-2 border-primary/20 bg-secondary p-6 md:p-8">
-            <div className="mb-6 flex items-center gap-3">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary">
-                <Monitor className="h-4 w-4 text-primary-foreground" />
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {points.map((point, index) => (
+            <div
+              key={point.title}
+              className="flex flex-col items-center rounded-2xl border border-border bg-secondary p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+              style={{
+                transitionDelay: isVisible ? `${index * 100}ms` : "0ms",
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? "translateY(0)" : "translateY(16px)",
+              }}
+            >
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+                <point.icon className="h-6 w-6 text-primary" />
               </div>
-              <div>
-                <h3 className="font-bold text-foreground">
-                  無料 - オンライン自習室
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  すべての機能の土台。誰でも無料で使えます
-                </p>
-              </div>
+              <h3 className="mb-2 text-base font-bold text-foreground">
+                {point.title}
+              </h3>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                {point.description}
+              </p>
             </div>
-
-            {/* Inner layers - paid */}
-            <div className="flex flex-col gap-4 md:flex-row">
-              <div className="flex-1 rounded-xl border border-primary/30 bg-background p-5 shadow-sm">
-                <div className="mb-3 flex items-center gap-2">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10">
-                    <Bot className="h-4 w-4 text-primary" />
-                  </div>
-                  <h4 className="text-sm font-bold text-foreground">
-                    半学半教AI
-                  </h4>
-                </div>
-                <p className="text-xs leading-relaxed text-muted-foreground">
-                  AIに教えることで理解を深める、逆転の学習法。アウトプット中心で確実に定着。
-                </p>
-                <div className="mt-3 inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-                  月額 5,000円
-                </div>
-              </div>
-
-              <div className="flex-1 rounded-xl border border-primary/30 bg-background p-5 shadow-sm">
-                <div className="mb-3 flex items-center gap-2">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10">
-                    <CalendarCheck className="h-4 w-4 text-primary" />
-                  </div>
-                  <h4 className="text-sm font-bold text-foreground">
-                    プランニングAI
-                  </h4>
-                </div>
-                <p className="text-xs leading-relaxed text-muted-foreground">
-                  志望校・現状学力から最適な学習ルートを自動設計。週単位でタスクと振り返りを回す。
-                </p>
-                <div className="mt-3 inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-                  月額 5,000円
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
