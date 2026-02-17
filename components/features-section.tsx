@@ -10,23 +10,6 @@ import {
 } from "lucide-react"
 import Image from "next/image"
 
-function ImagePlaceholder({
-  label,
-  aspectRatio = "aspect-video",
-  className = "",
-}: {
-  label: string
-  aspectRatio?: string
-  className?: string
-}) {
-  return (
-    <div
-      className={`flex items-center justify-center rounded-xl bg-muted/60 transition-colors hover:bg-muted ${aspectRatio} ${className}`}
-    >
-      <p className="px-4 text-center text-sm text-muted-foreground">{label}</p>
-    </div>
-  )
-}
 
 export function FeaturesSection() {
   const { ref, isVisible } = useScrollAnimation()
@@ -116,20 +99,13 @@ export function FeaturesSection() {
               </p>
             </div>
           </div>
-          <div className="grid gap-4 md:grid-cols-2">
-            <div className="overflow-hidden rounded-xl border border-border">
-              <Image
-                src="/images/dashboard.png"
-                alt="SAMPO STUDYの学習ダッシュボード"
-                width={1200}
-                height={675}
-                className="h-auto w-full"
-              />
-            </div>
-            <ImagePlaceholder
-              label="[画像D] 自動記録されている様子のスクリーンショット"
-              aspectRatio="aspect-[16/9]"
-              className="w-full"
+          <div className="overflow-hidden rounded-xl border border-border">
+            <Image
+              src="/images/dashboard.png"
+              alt="SAMPO STUDYの学習ダッシュボード"
+              width={1200}
+              height={675}
+              className="h-auto w-full"
             />
           </div>
         </div>
@@ -157,11 +133,13 @@ export function FeaturesSection() {
                 </div>
               </div>
             </div>
-            <div className="w-full md:w-[60%]">
-              <ImagePlaceholder
-                label="[画像C] 早稲田志望者チャンネルの会話スクリーンショット"
-                aspectRatio="aspect-[16/9]"
-                className="w-full"
+            <div className="w-full overflow-hidden rounded-xl border border-border md:w-[60%]">
+              <Image
+                src="/images/question-channel.png"
+                alt="質問チャンネルでの数学の解説の様子"
+                width={1100}
+                height={1000}
+                className="h-auto w-full"
               />
             </div>
           </div>
@@ -176,15 +154,28 @@ export function FeaturesSection() {
             transform: isVisible ? "translateY(0)" : "translateY(16px)",
           }}
         >
-          <div className="flex items-start gap-4">
-            <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10">
-              <MessageCircle className="h-6 w-6 text-primary" />
+          <div className="flex flex-col gap-6 md:flex-row md:items-start">
+            <div className="flex-1">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                  <MessageCircle className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-foreground">雑談チャンネル</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                    勉強ばかりだと息が詰まる。雑談チャンネルでは、同じ目標を持つ仲間と気軽に話せる。休憩時間のちょっとした会話が、また勉強に向かうエネルギーになる。
+                  </p>
+                </div>
+              </div>
             </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">雑談チャンネル</h3>
-              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                勉強ばかりだと息が詰まる。雑談チャンネルでは、同じ目標を持つ仲間と気軽に話せる。休憩時間のちょっとした会話が、また勉強に向かうエネルギーになる。
-              </p>
+            <div className="w-full overflow-hidden rounded-xl border border-border md:w-[60%]">
+              <Image
+                src="/images/chat-channel.png"
+                alt="雑談チャンネルでの交流の様子"
+                width={1260}
+                height={940}
+                className="h-auto w-full"
+              />
             </div>
           </div>
         </div>
