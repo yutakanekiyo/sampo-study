@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next"
-import { Inter, Roboto } from "next/font/google"
+import { Inter, Roboto, Noto_Sans_JP, Jost } from "next/font/google"
 
 import "./globals.css"
 
@@ -13,6 +13,20 @@ const roboto = Roboto({
   subsets: ["latin"],
   variable: "--font-roboto",
   weight: ["400", "500", "700"],
+})
+
+const jost = Jost({
+  subsets: ["latin"],
+  variable: "--font-jost",
+  weight: ["700", "800", "900"],
+})
+
+const notoSansJP = Noto_Sans_JP({
+  subsets: ["latin"],
+  variable: "--font-noto-jp",
+  weight: ["400", "500", "700", "900"],
+  display: "swap",
+  preload: false,
 })
 
 export const metadata: Metadata = {
@@ -35,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`${inter.variable} ${roboto.variable} font-sans antialiased`}
+        className={`${inter.variable} ${roboto.variable} ${notoSansJP.variable} ${jost.variable} font-sans antialiased`}
       >
         {children}
       </body>

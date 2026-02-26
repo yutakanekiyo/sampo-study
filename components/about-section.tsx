@@ -30,47 +30,49 @@ export function AboutSection() {
   const { ref, isVisible } = useScrollAnimation()
 
   return (
-    <section id="about" className="bg-background py-20 md:py-28">
+    <section id="about" className="bg-secondary py-[50px] md:py-[120px] lg:py-[150px]">
       <div
         ref={ref}
-        className={`mx-auto max-w-6xl px-4 transition-all duration-700 md:px-8 ${
+        className={`pl-6 pr-6 transition-all duration-700 md:pl-[150px] md:pr-[150px] ${
           isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
         }`}
       >
-        <div className="mb-16 text-center">
-          <p className="mb-3 text-sm font-semibold tracking-wider text-primary">
-            ABOUT
+        {/* Label + headline row + description */}
+        <div className="mb-[60px] flex flex-col gap-[30px] md:mb-[80px] md:gap-[40px] lg:mb-[117px] lg:gap-[55px]">
+          <p className="text-[16px] font-bold leading-[40px] text-primary md:text-[20px] lg:text-[26px]">
+            What's SAMPO STUDY?
           </p>
-          <h2 className="mb-4 text-2xl font-bold text-foreground md:text-4xl">
-            SAMPO STUDYとは
-          </h2>
-          <p className="mx-auto max-w-2xl text-base leading-relaxed text-muted-foreground">
-            Discord上で運営される、完全無料のオンライン自習室。
-            <br className="hidden md:block" />
-            家だと集中できない。一人だと続かない。
-            <br className="hidden md:block" />
-            そんな悩みを、仲間と一緒に解決する場所です。
-          </p>
+          <div className="flex flex-col gap-8 md:flex-row md:items-center md:gap-[60px] lg:gap-[100px]">
+            <h2 className="shrink-0 text-[34px] font-bold leading-[1.2] text-primary md:text-[44px] lg:text-[60px] lg:leading-[80px]">
+              もう、一人じゃない。
+            </h2>
+            <p className="text-[16px] font-bold leading-[1.8] text-primary md:text-[20px] md:leading-[40px] lg:text-[26px] lg:leading-[40px]">
+              Discord上で運営される、完全無料のオンライン自習室。<br />
+              家だと集中できない。一人だと続かない。<br />
+              そんな悩みを、仲間と一緒に解決する場所です。
+            </p>
+          </div>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Cards */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-[40px]">
           {points.map((point, index) => (
             <div
               key={point.title}
-              className="flex flex-col items-center rounded-2xl border border-border bg-secondary p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+              className="flex flex-col items-center rounded-[20px] bg-[#f0f5f1] px-[28px] pb-[40px] pt-[40px] text-center shadow-[6px_26px_40px_0px_rgba(0,0,0,0.15)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[6px_26px_50px_0px_rgba(0,0,0,0.22)] lg:rounded-[30px] lg:px-[38px] lg:pb-[48px] lg:pt-[48px]"
               style={{
                 transitionDelay: isVisible ? `${index * 100}ms` : "0ms",
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateY(0)" : "translateY(16px)",
               }}
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-                <point.icon className="h-6 w-6 text-primary" />
+              <div className="mb-[30px] flex h-[72px] w-[72px] items-center justify-center rounded-[18px] bg-primary/10 lg:mb-[46px] lg:h-[96px] lg:w-[96px] lg:rounded-[24px]">
+                <point.icon className="h-[36px] w-[36px] text-primary lg:h-[48px] lg:w-[48px]" strokeWidth={1.5} />
               </div>
-              <h3 className="mb-2 text-base font-bold text-foreground">
+              <h3 className="mb-[16px] text-[20px] font-bold text-primary lg:mb-[46px] lg:text-[28px]">
                 {point.title}
               </h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">
+              <p className="text-[14px] font-medium leading-[1.6] text-[#5c7066] lg:text-[18px] lg:leading-[24.8px]">
                 {point.description}
               </p>
             </div>

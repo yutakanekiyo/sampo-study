@@ -64,15 +64,25 @@ const config: Config = {
       },
       fontFamily: {
         sans: [
+          "var(--font-noto-jp)",
           "var(--font-roboto)",
           "-apple-system",
           "BlinkMacSystemFont",
+          "Hiragino Sans",
           "sans-serif",
         ],
         display: [
+          "var(--font-noto-jp)",
           "var(--font-inter)",
           "-apple-system",
           "BlinkMacSystemFont",
+          "Hiragino Sans",
+          "sans-serif",
+        ],
+        futura: [
+          "var(--font-jost)",
+          "Futura",
+          "Century Gothic",
           "sans-serif",
         ],
       },
