@@ -29,7 +29,7 @@ export function LegalFooter() {
             X
           </a>
           <a
-            href="https://discord.gg/NvG9Wng4"
+            href="https://discord.gg/VHBwskUBKZ"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-muted-foreground transition-colors hover:text-primary"

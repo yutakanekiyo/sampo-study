@@ -55,7 +55,7 @@ export function Header() {
               </a>
             ))}
             <a
-              href="https://discord.gg/NvG9Wng4"
+              href="https://discord.gg/VHBwskUBKZ"
               target="_blank"
               rel="noopener noreferrer"
               className={`rounded-full px-8 py-3 text-[15px] font-bold shadow-[0px_5px_30px_4px_rgba(0,0,0,0.2)] transition-all duration-300 hover:brightness-95 lg:px-10 lg:text-[18px] ${scrolled ? "bg-primary text-white" : "bg-white text-primary"}`}
@@ -99,7 +99,7 @@ export function Header() {
             </a>
           ))}
           <a
-            href="https://discord.gg/NvG9Wng4"
+            href="https://discord.gg/VHBwskUBKZ"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 rounded-full bg-white px-10 py-4 text-center text-[18px] font-bold text-primary transition-all duration-300 hover:opacity-90"

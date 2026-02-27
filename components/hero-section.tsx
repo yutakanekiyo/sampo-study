@@ -64,7 +64,7 @@ export function HeroSection() {
           </div>
 
           <a
-            href="https://discord.gg/NvG9Wng4"
+            href="https://discord.gg/VHBwskUBKZ"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex w-[340px] flex-col items-center rounded-full bg-primary-foreground px-12 py-3 shadow-[0px_5px_50px_8px_rgba(0,0,0,0.25)] transition-all hover:brightness-95 hover:shadow-2xl md:py-4"

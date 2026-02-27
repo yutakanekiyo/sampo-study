@@ -33,7 +33,7 @@ export function FooterCTASection() {
             {/* CTA Button */}
             <div className="flex-shrink-0">
               <a
-                href="https://discord.gg/NvG9Wng4"
+                href="https://discord.gg/VHBwskUBKZ"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex w-[340px] flex-col items-center rounded-full bg-white px-10 py-4 text-primary shadow-lg transition-all hover:brightness-95"
@@ -77,7 +77,7 @@ export function FooterCTASection() {
                 <Image src="/images/logo-x.png" alt="X" width={34} height={34} className="h-[28px] w-auto md:h-[34px]" />
               </a>
               <a
-                href="https://discord.gg/NvG9Wng4"
+                href="https://discord.gg/VHBwskUBKZ"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-opacity hover:opacity-60"
