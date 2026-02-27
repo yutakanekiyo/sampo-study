@@ -23,19 +23,10 @@ export function MessageSection() {
           </h2>
         </div>
 
-        {/* Content: photo left + text right */}
-        <div className="flex flex-col items-start gap-10 md:flex-row md:items-stretch md:gap-16 lg:gap-20">
-          {/* Photo */}
-          <div className="w-full flex-shrink-0 md:w-[300px] lg:w-[380px]">
-            <img
-              src="/images/message-photo.png"
-              alt="代表取締役CEO 伊藤翔馬"
-              className="h-full w-full rounded-[40px] object-cover lg:rounded-[60px]"
-            />
-          </div>
-
+        {/* Content */}
+        <div className="flex flex-col items-start gap-10">
           {/* Text */}
-          <div className="flex-1">
+          <div className="w-full">
             <div className="mb-12 flex flex-col gap-4 text-[13px] font-bold leading-[1.9] text-primary md:text-[15px] lg:text-[17px] lg:leading-[34px]">
               <p>ご覧いただきありがとうございます。SAMPO STUDY代表の伊藤翔馬です。</p>
               <p>「天は人の上に人を造らず」</p>
