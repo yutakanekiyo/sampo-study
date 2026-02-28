@@ -102,21 +102,6 @@ export function HeroSection() {
         />
       </div>
 
-      {/* Bottom wave */}
-      <div className="absolute bottom-[-2px] left-0 right-0">
-        <svg
-          viewBox="0 0 1440 80"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0 40C360 80 720 0 1080 40C1260 60 1380 60 1440 56V80H0V40Z"
-            fill="#f0f5f1"
-          />
-        </svg>
-      </div>
     </section>
   )
 }

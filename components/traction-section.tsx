@@ -7,7 +7,7 @@ export function TractionSection() {
   const { ref, isVisible } = useScrollAnimation()
 
   return (
-    <section className="bg-primary py-[60px] md:py-[100px]">
+    <section className="relative bg-primary pb-[100px] pt-[60px] md:pb-[140px] md:pt-[100px]">
       <div
         ref={ref}
         className={`mx-auto max-w-[1200px] px-6 transition-all duration-700 md:px-[60px] ${
@@ -66,6 +66,22 @@ export function TractionSection() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Bottom wave */}
+      <div className="absolute bottom-[-2px] left-0 right-0">
+        <svg
+          viewBox="0 0 1440 80"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0 40C360 80 720 0 1080 40C1260 60 1380 60 1440 56V80H0V40Z"
+            fill="#f0f5f1"
+          />
+        </svg>
       </div>
     </section>
   )
