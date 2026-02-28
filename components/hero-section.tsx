@@ -109,7 +109,7 @@ export function HeroSection() {
       <div className="relative z-10 pb-[70px] pt-[40px] md:pb-[100px] md:pt-[60px]">
         <div className="mx-auto max-w-[900px] px-6 md:px-[60px]">
           <div className="mb-[30px] text-center md:mb-[50px]">
-            <h2 className="mb-2 text-[24px] font-bold leading-tight text-white md:text-[34px] lg:text-[40px]">
+            <h2 className="mb-2 text-[30px] font-bold leading-tight text-white md:text-[42px] lg:text-[52px]">
               早慶東大合格者続出！
             </h2>
             <p className="text-[14px] font-bold text-white/80 md:text-[16px] lg:text-[20px]">
