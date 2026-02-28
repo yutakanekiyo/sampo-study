@@ -93,7 +93,7 @@ export function HeroSection() {
         </div>
 
         {/* Desktop: PC image — absolutely positioned within this hero block */}
-        <div className="absolute right-[-20%] top-1/2 z-0 hidden w-[65%] -translate-y-1/2 md:block">
+        <div className="absolute right-[-20%] top-[calc(50%+65px)] z-0 hidden w-[65%] -translate-y-1/2 md:block">
           <Image
             src="/images/hero-pc-vol2.png"
             alt="SAMPO STUDYのオンライン自習室の様子"
