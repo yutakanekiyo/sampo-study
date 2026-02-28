@@ -33,6 +33,9 @@ export const metadata: Metadata = {
   title: "SAMPO STUDY | Discordで繋がるオンライン自習室",
   description:
     "SAMPO STUDYはDiscord上で運営されるオンライン自習室。無料で、いつでも、仲間と一緒に勉強できる学習プラットフォームです。",
+  icons: {
+    icon: "/logo.jpg",
+  },
 }
 
 export const viewport: Viewport = {
