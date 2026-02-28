@@ -43,7 +43,7 @@ export function HeroSection() {
       {/* ── Hero content (PC image is relative to this block) ── */}
       <div className="relative">
         {/* Main content */}
-        <div className="relative z-10 flex w-full items-center px-6 pt-[88px] pb-20 md:pt-[112px] md:pl-[150px] md:pr-12">
+        <div className="relative z-10 flex w-full items-center px-6 pt-[120px] pb-20 md:pt-[160px] md:pl-[150px] md:pr-12">
           <div className="flex w-full flex-col items-center gap-[48px] md:items-start md:gap-[71px]">
             <div className="flex flex-col items-center gap-[20px] text-center md:items-start md:gap-[31px] md:text-left">
               <p className="text-[18px] font-bold leading-[40px] text-primary-foreground md:text-[26px]">
