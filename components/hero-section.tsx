@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-screen flex-col overflow-hidden bg-primary">
+    <section className="relative flex flex-col overflow-hidden bg-primary">
       {/* Background blob 1 - Vector 1 (left side) */}
       <div className="pointer-events-none absolute -bottom-16 -left-32 h-[580px] w-[610px] select-none">
         <svg
