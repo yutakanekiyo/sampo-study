@@ -40,72 +40,74 @@ export function HeroSection() {
         </svg>
       </div>
 
-      {/* Main content */}
-      <div className="relative z-10 flex w-full flex-1 items-center px-6 pt-[88px] pb-20 md:pt-[112px] md:pl-[150px] md:pr-12">
-        <div className="flex w-full flex-col items-center gap-[48px] md:items-start md:gap-[71px]">
-          <div className="flex flex-col items-center gap-[20px] text-center md:items-start md:gap-[31px] md:text-left">
-            <p className="text-[18px] font-bold leading-[40px] text-primary-foreground md:text-[26px]">
-              いつでも、どこでも、仲間と一緒に。
-            </p>
+      {/* ── Hero content (PC image is relative to this block) ── */}
+      <div className="relative">
+        {/* Main content */}
+        <div className="relative z-10 flex w-full items-center px-6 pt-[88px] pb-20 md:pt-[112px] md:pl-[150px] md:pr-12">
+          <div className="flex w-full flex-col items-center gap-[48px] md:items-start md:gap-[71px]">
+            <div className="flex flex-col items-center gap-[20px] text-center md:items-start md:gap-[31px] md:text-left">
+              <p className="text-[18px] font-bold leading-[40px] text-primary-foreground md:text-[26px]">
+                いつでも、どこでも、仲間と一緒に。
+              </p>
 
-            <div className="flex flex-col items-center gap-[20px] md:items-start md:gap-[31px]">
-              <h2 className="text-[24px] font-bold leading-snug text-primary-foreground md:text-[36px] md:leading-[56px] lg:text-[48px] lg:leading-[70px]">
-                Discordで繋がる、
-                <br />
-                完全無料のオンライン自習室
-              </h2>
-              <h1
-                className="font-display text-[52px] font-bold leading-none tracking-tight text-primary-foreground md:whitespace-nowrap md:text-[72px] md:leading-[100px] lg:text-[100px]"
-                style={{ textShadow: "0 4px 20px rgba(0,0,0,0.25)" }}
-              >
-                SAMPO STUDY
-              </h1>
+              <div className="flex flex-col items-center gap-[20px] md:items-start md:gap-[31px]">
+                <h2 className="text-[24px] font-bold leading-snug text-primary-foreground md:text-[36px] md:leading-[56px] lg:text-[48px] lg:leading-[70px]">
+                  Discordで繋がる、
+                  <br />
+                  完全無料のオンライン自習室
+                </h2>
+                <h1
+                  className="font-display text-[52px] font-bold leading-none tracking-tight text-primary-foreground md:whitespace-nowrap md:text-[72px] md:leading-[100px] lg:text-[100px]"
+                  style={{ textShadow: "0 4px 20px rgba(0,0,0,0.25)" }}
+                >
+                  SAMPO STUDY
+                </h1>
+              </div>
+            </div>
+
+            <a
+              href="https://discord.gg/VHBwskUBKZ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex w-[340px] flex-col items-center rounded-full bg-primary-foreground px-12 py-3 shadow-[0px_5px_50px_8px_rgba(0,0,0,0.25)] transition-all hover:brightness-95 hover:shadow-2xl md:py-4"
+            >
+              <span className="text-[13px] font-bold text-primary/60 md:text-[15px]">無料で今すぐ始められる</span>
+              <span className="flex items-center gap-2 text-[20px] font-bold text-primary md:text-[25px]">
+                Discordに参加する
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </span>
+            </a>
+
+            {/* Mobile: image in flow */}
+            <div className="md:hidden">
+              <Image
+                src="/images/hero-pc-vol2.png"
+                alt="SAMPO STUDYのオンライン自習室の様子"
+                width={600}
+                height={420}
+                className="h-auto w-full drop-shadow-[0_24px_60px_rgba(0,0,0,0.5)]"
+                priority
+              />
             </div>
           </div>
+        </div>
 
-          <a
-            href="https://discord.gg/VHBwskUBKZ"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex w-[340px] flex-col items-center rounded-full bg-primary-foreground px-12 py-3 shadow-[0px_5px_50px_8px_rgba(0,0,0,0.25)] transition-all hover:brightness-95 hover:shadow-2xl md:py-4"
-          >
-            <span className="text-[13px] font-bold text-primary/60 md:text-[15px]">無料で今すぐ始められる</span>
-            <span className="flex items-center gap-2 text-[20px] font-bold text-primary md:text-[25px]">
-              Discordに参加する
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </span>
-          </a>
-
-          {/* Mobile: image in flow */}
-          <div className="md:hidden">
-            <Image
-              src="/images/hero-pc-vol2.png"
-              alt="SAMPO STUDYのオンライン自習室の様子"
-              width={600}
-              height={420}
-              className="h-auto w-full drop-shadow-[0_24px_60px_rgba(0,0,0,0.5)]"
-              priority
-            />
-          </div>
+        {/* Desktop: PC image — absolutely positioned within this hero block */}
+        <div className="absolute right-[-20%] top-1/2 z-0 hidden w-[65%] -translate-y-1/2 md:block">
+          <Image
+            src="/images/hero-pc-vol2.png"
+            alt="SAMPO STUDYのオンライン自習室の様子"
+            width={900}
+            height={630}
+            className="h-auto w-full drop-shadow-[0_24px_60px_rgba(0,0,0,0.5)]"
+            priority
+          />
         </div>
       </div>
 
-      {/* Desktop: PC image — absolutely positioned, right 1/3 off screen */}
-      <div className="absolute right-[-20%] top-1/2 z-0 hidden w-[65%] -translate-y-1/2 md:block">
-        <Image
-          src="/images/hero-pc-vol2.png"
-          alt="SAMPO STUDYのオンライン自習室の様子"
-          width={900}
-          height={630}
-          className="h-auto w-full drop-shadow-[0_24px_60px_rgba(0,0,0,0.5)]"
-          priority
-        />
-      </div>
-
-      {/* Traction */}
+      {/* ── Traction ── */}
       <div className="relative z-10 pb-[70px] pt-[40px] md:pb-[100px] md:pt-[60px]">
         <div className="mx-auto max-w-[900px] px-6 md:px-[60px]">
-          {/* Header */}
           <div className="mb-[30px] text-center md:mb-[50px]">
             <h2 className="mb-2 text-[24px] font-bold leading-tight text-white md:text-[34px] lg:text-[40px]">
               早慶東大合格者続出！
@@ -115,7 +117,6 @@ export function HeroSection() {
             </p>
           </div>
 
-          {/* Cards */}
           <div className="flex flex-col items-center gap-8 md:flex-row md:justify-center md:gap-[60px] lg:gap-[120px]">
             {/* Card 1 */}
             <div className="relative flex h-[200px] w-[200px] items-center justify-center md:h-[230px] md:w-[230px] lg:h-[260px] lg:w-[260px]">
