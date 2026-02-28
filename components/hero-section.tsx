@@ -129,7 +129,7 @@ export function HeroSection() {
                 <p className="font-bold leading-none">
                   <span className="text-[30px] md:text-[36px] lg:text-[42px]">40</span>
                   <span className="text-[20px] md:text-[24px] lg:text-[28px]"> → </span>
-                  <span className="text-[44px] md:text-[54px] lg:text-[62px]">60!</span>
+                  <span className="text-[36px] md:text-[44px] lg:text-[50px]">60!</span>
                 </p>
               </div>
             </div>
