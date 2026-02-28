@@ -125,8 +125,8 @@ export function HeroSection() {
                 <p className="text-[14px] font-bold leading-tight md:text-[16px] lg:text-[20px]">
                   難関大学合格者
                 </p>
+                <p className="text-[14px] font-bold md:text-[16px] lg:text-[18px]">偏差値</p>
                 <p className="font-bold leading-none">
-                  <span className="text-[14px] md:text-[16px] lg:text-[18px]">偏差値</span>
                   <span className="text-[30px] md:text-[36px] lg:text-[42px]">40</span>
                   <span className="text-[20px] md:text-[24px] lg:text-[28px]"> → </span>
                   <span className="text-[44px] md:text-[54px] lg:text-[62px]">60!</span>
@@ -141,8 +141,8 @@ export function HeroSection() {
                 <p className="text-[14px] font-bold leading-tight md:text-[16px] lg:text-[20px]">
                   全体平均
                 </p>
+                <p className="text-[14px] font-bold md:text-[16px] lg:text-[18px]">偏差値</p>
                 <p className="font-bold leading-none">
-                  <span className="text-[14px] md:text-[16px] lg:text-[18px]">偏差値</span>
                   <span className="text-[18px] md:text-[22px] lg:text-[22px]">最大</span>
                   <span className="text-[36px] md:text-[44px] lg:text-[48px]">15</span>
                   <span className="text-[28px] md:text-[34px] lg:text-[38px]">UP!</span>
