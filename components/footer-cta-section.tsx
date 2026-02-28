@@ -95,12 +95,6 @@ export function FooterCTASection() {
           <div className="flex flex-col items-center gap-4">
             <div className="flex flex-wrap items-center justify-center gap-8 md:gap-[70px]">
               <Link
-                href="/legal/tokushoho"
-                className="text-[14px] font-medium text-[#5c7066] transition-colors hover:text-foreground md:text-[19px]"
-              >
-                特定商取引法に基づく表記
-              </Link>
-              <Link
                 href="/legal/privacy"
                 className="text-[14px] font-medium text-[#5c7066] transition-colors hover:text-foreground md:text-[19px]"
               >

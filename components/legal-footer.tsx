@@ -44,12 +44,6 @@ export function LegalFooter() {
         <div className="flex flex-col items-center gap-4">
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
             <Link
-              href="/legal/tokushoho"
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              特定商取引法に基づく表記
-            </Link>
-            <Link
               href="/legal/privacy"
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
