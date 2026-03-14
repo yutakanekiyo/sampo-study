@@ -1,8 +1,10 @@
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
+import { VideoSection } from "@/components/video-section"
 import { AboutSection } from "@/components/about-section"
 import { FeaturesSection } from "@/components/features-section"
 import { MessageSection } from "@/components/message-section"
+import { TestimonialsSection } from "@/components/testimonials-section"
 import { FAQSection } from "@/components/faq-section"
 import { FooterCTASection } from "@/components/footer-cta-section"
 
@@ -11,9 +13,11 @@ export default function Page() {
     <main>
       <Header />
       <HeroSection />
+      <VideoSection />
       <AboutSection />
       <FeaturesSection />
       <MessageSection />
+      <TestimonialsSection />
       <FAQSection />
       <FooterCTASection />
     </main>
