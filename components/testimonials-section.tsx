@@ -66,8 +66,8 @@ export function TestimonialsSection() {
                   <Image
                     src={t.icon}
                     alt=""
-                    width={128}
-                    height={128}
+                    width={256}
+                    height={256}
                     className="h-full w-full object-cover mix-blend-multiply"
                   />
                 </div>
