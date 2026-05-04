@@ -52,7 +52,7 @@ export function HeroSection() {
 
               <div className="flex flex-col items-center gap-[20px] md:items-start md:gap-[31px]">
                 <h2 className="text-[24px] font-bold leading-snug text-primary-foreground md:text-[36px] md:leading-[56px] lg:text-[48px] lg:leading-[70px]">
-                  Discordで繋がる、
+                  アプリで繋がる、
                   <br />
                   完全無料のオンライン自習室
                 </h2>
@@ -73,7 +73,7 @@ export function HeroSection() {
             >
               <span className="text-[13px] font-bold text-primary/60 md:text-[15px]">無料で今すぐ始められる</span>
               <span className="flex items-center gap-2 text-[20px] font-bold text-primary md:text-[25px]">
-                Discordに参加する
+                アプリを使い始める
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </span>
             </a>

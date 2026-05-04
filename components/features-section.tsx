@@ -3,7 +3,17 @@
 import Image from "next/image"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
-const features = [
+type Feature = {
+  number: string
+  title: string
+  description: string
+  image?: string
+  imageAlt?: string
+  comingSoon?: boolean
+  textRight: boolean
+}
+
+const features: Feature[] = [
   {
     number: "01",
     title: "オンライン自習室",
@@ -48,6 +58,14 @@ const features = [
     image: "/images/feature-05.png",
     imageAlt: "雑談チャンネルでの交流の様子",
     textRight: true,
+  },
+  {
+    number: "06",
+    title: "学習計画AI",
+    description:
+      "一人ひとりの志望校・現在の学力・残り日数に合わせて、入試当日までの学習計画を自動で組み立てるAI。日々の進捗に応じて計画を調整し、合格までの最短ルートを伴走する。",
+    comingSoon: true,
+    textRight: false,
   },
 ]
 
@@ -108,6 +126,11 @@ export function FeaturesSection() {
                   </span>
                   <h3 className="relative z-10 text-[26px] font-bold leading-tight text-white md:text-[38px] lg:text-[60px] lg:leading-[120px]">
                     {feature.title}
+                    {feature.comingSoon && (
+                      <span className="ml-3 inline-block translate-y-[-6px] rounded-full border border-white/40 bg-white/10 px-3 py-1 align-middle text-[12px] font-bold text-white md:ml-4 md:text-[14px] lg:ml-5 lg:text-[16px]">
+                        開発中
+                      </span>
+                    )}
                   </h3>
                 </div>
                 <p className="whitespace-pre-line text-[14px] font-bold leading-[1.9] text-white md:text-[16px] lg:text-[20px] lg:leading-[40px]">
@@ -117,14 +140,22 @@ export function FeaturesSection() {
 
               {/* Image — drop-shadow on the image itself, no border/frame */}
               <div className="flex-1">
-                <Image
-                  src={feature.image}
-                  alt={feature.imageAlt}
-                  width={700}
-                  height={500}
-                  className="h-auto w-full object-contain"
-                  style={{ filter: "drop-shadow(0px 8px 40px rgba(0,0,0,0.4))" }}
-                />
+                {feature.image ? (
+                  <Image
+                    src={feature.image}
+                    alt={feature.imageAlt ?? ""}
+                    width={700}
+                    height={500}
+                    className="h-auto w-full object-contain"
+                    style={{ filter: "drop-shadow(0px 8px 40px rgba(0,0,0,0.4))" }}
+                  />
+                ) : (
+                  <div className="flex aspect-[7/5] w-full items-center justify-center rounded-[24px] border-2 border-dashed border-white/30 bg-white/5">
+                    <p className="text-center text-[14px] font-bold text-white/70 md:text-[16px] lg:text-[20px]">
+                      Coming Soon
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           ))}

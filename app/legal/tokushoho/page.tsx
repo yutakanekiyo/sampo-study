@@ -101,7 +101,7 @@ export default function TokushohoPage() {
                     動作環境
                   </th>
                   <td className="px-4 py-4 text-sm leading-relaxed text-foreground/80 md:px-6">
-                    オンライン学習サービスはPC・タブレット・スマートフォンおよびDiscordが動作する環境と、安定したインターネット接続が必要です。
+                    オンライン学習サービスはPC・タブレット・スマートフォンおよび当社が提供する専用アプリが動作する環境と、安定したインターネット接続が必要です。
                   </td>
                 </tr>
               </tbody>

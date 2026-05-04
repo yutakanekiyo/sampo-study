@@ -39,7 +39,7 @@ export function FooterCTASection() {
                 className="inline-flex w-[340px] flex-col items-center rounded-full bg-white px-10 py-4 text-primary shadow-lg transition-all hover:brightness-95"
               >
                 <span className="text-[12px] font-bold">無料で今すぐ始められる</span>
-                <span className="text-[18px] font-bold md:text-[20px]">Discordに参加する</span>
+                <span className="text-[18px] font-bold md:text-[20px]">アプリを使い始める</span>
               </a>
             </div>
           </div>
@@ -75,15 +75,6 @@ export function FooterCTASection() {
                 aria-label="X (Twitter)"
               >
                 <Image src="/images/logo-x.png" alt="X" width={34} height={34} className="h-[28px] w-auto md:h-[34px]" />
-              </a>
-              <a
-                href="https://discord.gg/VHBwskUBKZ"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-opacity hover:opacity-60"
-                aria-label="Discord"
-              >
-                <Image src="/images/logo-discord.png" alt="Discord" width={34} height={34} className="h-[28px] w-auto md:h-[34px]" />
               </a>
             </div>
           </div>

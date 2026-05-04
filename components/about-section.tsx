@@ -6,8 +6,8 @@ import { Monitor, Users, Clock, Shield } from "lucide-react"
 const points = [
   {
     icon: Monitor,
-    title: "Discordで運営",
-    description: "普段使い慣れたDiscordだから、新しいアプリをインストールする必要なし。",
+    title: "専用アプリで運営",
+    description: "受験生のために設計された、SAMPO STUDY専用アプリ。学習に集中できる環境がすぐに手に入る。",
   },
   {
     icon: Users,
@@ -47,7 +47,7 @@ export function AboutSection() {
               もう、一人じゃない。
             </h2>
             <p className="text-[16px] font-bold leading-[1.8] text-primary md:text-[20px] md:leading-[40px] lg:text-[26px] lg:leading-[40px]">
-              Discord上で運営される、完全無料のオンライン自習室。<br />
+              専用アプリで運営される、完全無料のオンライン自習室。<br />
               家だと集中できない。一人だと続かない。<br />
               そんな悩みを、仲間と一緒に解決する場所です。
             </p>
