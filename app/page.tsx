@@ -19,8 +19,14 @@ export default function Page() {
         <AboutSection />
       </HeroParallaxBg>
       <FeaturesSection />
-      <MessageSection />
-      <TestimonialsSection />
+      <section className="relative pb-[40px] pt-[40px] md:pb-[80px] md:pt-[80px] lg:pb-[120px] lg:pt-[120px]">
+        <div className="px-3 md:px-4 lg:px-6">
+          <div className="relative overflow-hidden rounded-[40px] bg-gradient-to-r from-[#FCF7F1] via-[#FCF7F1] to-[#F4F5EE]/0 md:rounded-[56px] lg:rounded-[84px]">
+            <MessageSection />
+            <TestimonialsSection />
+          </div>
+        </div>
+      </section>
       <FAQSection />
       <FooterCTASection />
     </main>

@@ -5,7 +5,7 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 const testimonials = [
   {
-    icon: "/images/icon-male.png",
+    icon: "/assets/user1.png",
     summary: "家でも集中できるようになり、一人で抱え込む苦しさが減った。",
     body: [
       "受験では、1人での勉強時間が1番苦痛でした。",
@@ -14,11 +14,11 @@ const testimonials = [
       "疲れた日でもまず入室だけしようとすると、気がついたら勉強を始めていて思った以上に集中できました。",
       "その積み重ねが習慣になっていき、1人で抱え込む苦しさが減ったのが自分にとっていちばん大きかったです。",
     ],
-    author: "生徒（元高3）",
+    author: "生徒（元高校3年生）",
     result: "慶應大学合格",
   },
   {
-    icon: "/images/icon-female.png",
+    icon: "/assets/user2.png",
     summary: "必要だったのは高額な授業より、努力を続けられる環境だった。",
     body: [
       "無料と聞いたときは、正直不安がありました。",
@@ -35,66 +35,89 @@ export function TestimonialsSection() {
   const { ref, isVisible } = useScrollAnimation()
 
   return (
-    <section id="testimonials" className="relative bg-primary py-[60px] md:py-[150px]">
-      <div
-        ref={ref}
-        className={`relative z-10 pl-6 pr-6 md:pl-[150px] md:pr-[150px] transition-all duration-700 ${
-          isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
-        }`}
-      >
-        {/* Header */}
-        <div className="mb-[36px] md:mb-[80px]">
-          <p className="mb-4 text-[16px] font-bold text-white/70 md:text-[20px] lg:text-[26px]">
-            Testimonials
-          </p>
-          <h2 className="text-[26px] font-bold leading-tight text-white md:text-[38px] lg:text-[56px]">
-            利用者の声
-          </h2>
-        </div>
-
-        {/* Cards */}
-        <div className="grid gap-6 md:grid-cols-2">
-          {testimonials.map((t, i) => (
-            <div
-              key={i}
-              className="flex flex-col justify-between rounded-[20px] bg-white/10 p-8 backdrop-blur-sm transition-all duration-300 hover:bg-white/15 md:p-10"
-              style={{ transitionDelay: `${i * 100}ms` }}
-            >
-              {/* Pictogram + Summary */}
-              <div className="mb-6 flex items-center gap-4">
-                <div className="h-32 w-32 shrink-0 overflow-hidden rounded-full bg-white/20">
-                  <Image
-                    src={t.icon}
-                    alt=""
-                    width={256}
-                    height={256}
-                    className="h-full w-full object-cover mix-blend-multiply"
-                  />
-                </div>
-                <p className="text-[15px] font-bold leading-[1.7] text-white md:text-[17px] lg:text-[19px]">
-                  {t.summary}
-                </p>
-              </div>
-
-              {/* Body */}
-              <div className="mb-8 flex flex-col gap-4 text-[12px] font-bold leading-[1.9] text-white/75 md:text-[13px] lg:text-[15px] lg:leading-[32px]">
-                {t.body.map((paragraph, j) => (
-                  <p key={j}>{paragraph}</p>
-                ))}
-              </div>
-
-              <div className="border-t border-white/20 pt-6">
-                <p className="text-[14px] font-bold text-white/80 md:text-[16px]">{t.author}</p>
-                {t.result && (
-                  <p className="mt-1 text-[16px] font-bold text-white md:text-[20px]">
-                    {t.result}
-                  </p>
-                )}
+    <div
+      id="testimonials"
+      ref={ref}
+      className={`relative px-6 pb-7 pt-2 transition-all duration-700 md:px-12 md:pb-9 md:pt-4 lg:px-[80px] lg:pb-[64px] lg:pt-6 ${
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+      }`}
+    >
+      <div className="mx-auto max-w-[1400px]">
+            {/* Header — same pattern as Introduction / Free Features */}
+            <div className="mb-[40px] text-center md:mb-[60px] lg:mb-[80px]">
+              <p className="mb-3 text-[14px] font-bold tracking-widest text-primary md:text-[16px] lg:text-[18px]">
+                Testimonials
+              </p>
+              <div className="flex items-center justify-center gap-4 md:gap-8 lg:gap-12">
+                <Image
+                  src="/assets/dots1.svg"
+                  alt=""
+                  width={80}
+                  height={80}
+                  aria-hidden
+                  className="h-[14px] w-auto shrink-0 md:h-[20px] lg:h-[26px]"
+                />
+                <h2 className="text-[28px] font-bold leading-[1.4] text-primary md:text-[40px] lg:text-[52px] lg:leading-[1.35]">
+                  利用者の声
+                </h2>
+                <Image
+                  src="/assets/dots2.svg"
+                  alt=""
+                  width={80}
+                  height={80}
+                  aria-hidden
+                  className="h-[14px] w-auto shrink-0 md:h-[20px] lg:h-[26px]"
+                />
               </div>
             </div>
-          ))}
-        </div>
+
+            {/* Cards */}
+            <div className="grid gap-6 md:grid-cols-2 md:gap-8">
+              {testimonials.map((t, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col rounded-[20px] bg-white p-6 shadow-[0px_4px_24px_rgba(0,0,0,0.06)] transition-all duration-300 md:p-8 lg:p-10"
+                  style={{ transitionDelay: `${i * 100}ms` }}
+                >
+                  {/* Icon + Tags + Summary */}
+                  <div className="mb-6 flex items-start gap-4">
+                    <div className="h-24 w-24 shrink-0 overflow-hidden rounded-full bg-[#F9F5EC] md:h-28 md:w-28 lg:h-32 lg:w-32">
+                      <Image
+                        src={t.icon}
+                        alt=""
+                        width={256}
+                        height={256}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                    <div className="flex flex-1 flex-col gap-3">
+                      {/* Tags */}
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="rounded-full bg-primary/10 px-3 py-1 text-[11px] font-bold text-primary md:px-4 md:py-1.5 md:text-[12px] lg:text-[13px]">
+                          {t.author}
+                        </span>
+                        {t.result && (
+                          <span className="rounded-full bg-primary/10 px-3 py-1 text-[11px] font-bold text-primary md:px-4 md:py-1.5 md:text-[12px] lg:text-[13px]">
+                            {t.result}
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-[17px] font-bold leading-[1.6] text-primary md:text-[19px] lg:text-[22px]">
+                        {t.summary}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Body */}
+                  <div className="flex flex-col gap-2 text-[12px] font-bold leading-[1.95] text-[#5a5a5a] md:gap-2.5 md:text-[13px] lg:gap-3 lg:text-[15px] lg:leading-[1.95]">
+                    {t.body.map((paragraph, j) => (
+                      <p key={j}>{paragraph}</p>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
       </div>
-    </section>
+    </div>
   )
 }
