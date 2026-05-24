@@ -24,7 +24,7 @@ export function CTASection({ id }: { id?: string } = {}) {
           className="pointer-events-none absolute right-0 top-[58%] z-0 w-[74%] -translate-y-1/2 md:w-[70%] lg:w-[66%]"
         />
 
-        {/* Phones (desktop only) */}
+        {/* Phones (desktop only) — soft float so the card feels alive */}
         <div className="pointer-events-none absolute right-4 top-0 hidden h-full md:block lg:right-8 xl:right-12">
           <div className="relative h-full w-[470px] lg:w-[600px] xl:w-[730px]">
             <Image
@@ -33,7 +33,7 @@ export function CTASection({ id }: { id?: string } = {}) {
               width={365}
               height={668}
               aria-hidden
-              className="absolute left-0 top-6 w-[220px] lg:top-8 lg:w-[300px] xl:w-[365px]"
+              className="absolute left-0 top-6 w-[220px] animate-float-soft lg:top-8 lg:w-[300px] xl:w-[365px]"
             />
             <Image
               src="/assets/mockup-home-rotate.png"
@@ -41,7 +41,8 @@ export function CTASection({ id }: { id?: string } = {}) {
               width={284}
               height={585}
               aria-hidden
-              className="absolute right-2 top-16 w-[180px] lg:right-4 lg:top-20 lg:w-[230px] xl:right-6 xl:top-[92px] xl:w-[284px]"
+              className="absolute right-2 top-16 w-[180px] animate-float-soft lg:right-4 lg:top-20 lg:w-[230px] xl:right-6 xl:top-[92px] xl:w-[284px]"
+              style={{ animationDelay: "0.8s", animationDuration: "7s" }}
             />
           </div>
         </div>
@@ -63,7 +64,7 @@ export function CTASection({ id }: { id?: string } = {}) {
           <div className="flex flex-wrap items-center gap-3 md:gap-4">
             <a
               href="#"
-              className="inline-flex transition-opacity hover:opacity-85"
+              className="inline-flex transition-all duration-300 hover:-translate-y-0.5 hover:opacity-85"
               aria-label="App Storeからダウンロード"
             >
               <Image
@@ -76,7 +77,7 @@ export function CTASection({ id }: { id?: string } = {}) {
             </a>
             <a
               href="#"
-              className="inline-flex transition-opacity hover:opacity-85"
+              className="inline-flex transition-all duration-300 hover:-translate-y-0.5 hover:opacity-85"
               aria-label="Google Playで手に入れよう"
             >
               <Image

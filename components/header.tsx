@@ -31,7 +31,7 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed left-0 right-0 top-0 z-50 bg-white transition-shadow duration-300 ${
+        className={`fixed left-0 right-0 top-0 z-50 animate-slide-down bg-white transition-shadow duration-300 ${
           scrolled ? "shadow-[0_2px_20px_rgba(0,0,0,0.06)]" : ""
         }`}
       >
@@ -61,7 +61,7 @@ export function Header() {
             ))}
             <a
               href="/#cta"
-              className="ml-2 inline-flex items-center justify-center rounded-full bg-primary px-7 py-3 text-[14px] font-bold text-white shadow-[0px_5px_20px_4px_rgba(0,0,0,0.08)] transition-all hover:brightness-110 lg:px-9 lg:py-4 lg:text-[16px]"
+              className="ml-2 inline-flex items-center justify-center rounded-full bg-primary px-7 py-3 text-[14px] font-bold text-white shadow-[0px_5px_20px_4px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0px_10px_28px_4px_rgba(0,0,0,0.14)] hover:brightness-110 lg:px-9 lg:py-4 lg:text-[16px]"
             >
               無料でアプリをはじめる
             </a>

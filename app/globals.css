@@ -74,4 +74,24 @@ body {
   .tracking-japanese {
     letter-spacing: 0.04em;
   }
+  /* Initial state for elements that will animate in on load. Combined with
+     animations like `animate-fade-in-up`, this hides the element before the
+     animation begins so there is no flash of pre-animation content. */
+  .will-animate {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .will-animate {
+    opacity: 1 !important;
+  }
 }
