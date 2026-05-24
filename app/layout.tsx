@@ -26,7 +26,6 @@ const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-jp",
   weight: ["400", "500", "700", "900"],
   display: "swap",
-  preload: false,
 })
 
 export const metadata: Metadata = {

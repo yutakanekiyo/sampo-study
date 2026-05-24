@@ -4,7 +4,13 @@
 
 html,
 body {
-  overflow-x: hidden;
+  /* `clip` clips overflow but does NOT create a scroll container, so
+     position:sticky inside descendant sections keeps working. `hidden`
+     would silently break sticky page-wide. overflow-y is set explicitly
+     to visible to prevent the spec's implicit-auto behavior from
+     turning the body into a scroll container. */
+  overflow-x: clip;
+  overflow-y: visible;
   margin: 0;
   padding: 0;
 }

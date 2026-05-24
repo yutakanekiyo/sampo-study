@@ -1,26 +1,45 @@
 "use client"
 
+import Image from "next/image"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
 export function VideoSection() {
   const { ref, isVisible } = useScrollAnimation()
 
   return (
-    <section id="video" className="relative bg-secondary py-[60px] md:py-[100px]">
+    <section id="video" className="relative pt-[60px] pb-[20px] md:pt-[100px] md:pb-[40px] lg:pt-[120px] lg:pb-[50px]">
       <div
         ref={ref}
-        className={`relative z-10 pl-6 pr-6 md:pl-[150px] md:pr-[150px] transition-all duration-700 ${
+        className={`relative z-10 mx-auto max-w-[1400px] px-6 transition-all duration-700 md:px-12 lg:px-[80px] ${
           isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
         }`}
       >
-        {/* Header */}
-        <div className="mb-[36px] md:mb-[60px]">
-          <p className="mb-4 text-[16px] font-bold text-primary md:text-[20px] lg:text-[26px]">
+        {/* Header — same pattern as features section */}
+        <div className="mb-[40px] text-center md:mb-[60px] lg:mb-[80px]">
+          <p className="mb-3 text-[14px] font-bold tracking-widest text-primary md:text-[16px] lg:text-[18px]">
             Introduction
           </p>
-          <h2 className="text-[26px] font-bold leading-tight text-primary md:text-[38px] lg:text-[56px]">
-            サービス紹介
-          </h2>
+          <div className="flex items-center justify-center gap-4 md:gap-8 lg:gap-12">
+            <Image
+              src="/assets/dots1.svg"
+              alt=""
+              width={80}
+              height={80}
+              aria-hidden
+              className="h-[14px] w-auto shrink-0 md:h-[20px] lg:h-[26px]"
+            />
+            <h2 className="text-[28px] font-bold leading-[1.4] text-primary md:text-[40px] lg:text-[52px] lg:leading-[1.35]">
+              サービス紹介
+            </h2>
+            <Image
+              src="/assets/dots2.svg"
+              alt=""
+              width={80}
+              height={80}
+              aria-hidden
+              className="h-[14px] w-auto shrink-0 md:h-[20px] lg:h-[26px]"
+            />
+          </div>
         </div>
 
         {/* Video */}

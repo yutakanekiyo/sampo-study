@@ -16,58 +16,61 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > window.innerHeight * 0.8)
+    const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener("scroll", onScroll, { passive: true })
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  // メニュー開放中はbodyスクロールを止める
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : ""
-    return () => { document.body.style.overflow = "" }
+    return () => {
+      document.body.style.overflow = ""
+    }
   }, [mobileOpen])
 
   return (
     <>
-      <header className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 shadow-[0_2px_20px_rgba(0,0,0,0.08)] backdrop-blur-sm" : ""}`}>
-        <div className="flex items-center justify-between">
+      <header
+        className={`fixed left-0 right-0 top-0 z-50 bg-white transition-shadow duration-300 ${
+          scrolled ? "shadow-[0_2px_20px_rgba(0,0,0,0.06)]" : ""
+        }`}
+      >
+        <div className="mx-auto flex h-[72px] max-w-[1920px] items-center justify-between px-5 md:h-[88px] md:px-10 lg:px-[72px]">
           {/* Logo */}
-          <a href="#" className={`flex shrink-0 items-center px-8 py-4 md:px-10 md:py-5 ${scrolled ? "" : "rounded-br-[50px] md:rounded-br-[70px]"} bg-white transition-all duration-300`}>
+          <a href="#" className="flex shrink-0 items-center">
             <Image
-              src="/images/sampo-logo.svg"
-              alt="SAMPO STUDY ロゴ"
-              width={240}
-              height={99}
-              className="h-12 w-auto md:h-16"
+              src="/assets/logo-sampostudy.svg"
+              alt="SAMPO STUDY"
+              width={376}
+              height={34}
+              className="h-5 w-auto md:h-5 lg:h-6"
               priority
             />
           </a>
 
           {/* Desktop nav */}
-          <nav className="hidden items-center gap-6 pr-10 md:flex lg:gap-8 lg:pr-14">
+          <nav className="hidden items-center gap-6 md:flex lg:gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className={`text-[15px] font-bold transition-all duration-300 hover:opacity-75 lg:text-[18px] ${scrolled ? "text-primary" : "text-white"}`}
+                className="text-[14px] font-bold text-[#393939] transition-opacity hover:opacity-70 lg:text-[16px]"
               >
                 {link.label}
               </a>
             ))}
             <a
-              href="https://discord.gg/VHBwskUBKZ"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`rounded-full px-8 py-3 text-[15px] font-bold shadow-[0px_5px_30px_4px_rgba(0,0,0,0.2)] transition-all duration-300 hover:brightness-95 lg:px-10 lg:text-[18px] ${scrolled ? "bg-primary text-white" : "bg-white text-primary"}`}
+              href="#cta"
+              className="ml-2 inline-flex items-center justify-center rounded-full bg-primary px-7 py-3 text-[14px] font-bold text-white shadow-[0px_5px_20px_4px_rgba(0,0,0,0.08)] transition-all hover:brightness-110 lg:px-9 lg:py-4 lg:text-[16px]"
             >
-              無料で参加する
+              無料でアプリをはじめる
             </a>
           </nav>
 
           {/* Mobile hamburger */}
           <button
-            className="relative z-[60] mr-4 flex items-center justify-center rounded-lg p-2 transition-colors duration-300 md:hidden"
-            style={{ color: mobileOpen ? "#fff" : scrolled ? "hsl(150 53% 24%)" : "#fff" }}
+            className="relative z-[60] flex items-center justify-center rounded-lg p-2 md:hidden"
+            style={{ color: mobileOpen ? "#fff" : "hsl(150 53% 24%)" }}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "メニューを閉じる" : "メニューを開く"}
           >
@@ -99,9 +102,7 @@ export function Header() {
             </a>
           ))}
           <a
-            href="https://discord.gg/VHBwskUBKZ"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#cta"
             className="mt-4 rounded-full bg-white px-10 py-4 text-center text-[18px] font-bold text-primary transition-all duration-300 hover:opacity-90"
             style={{
               transitionDelay: mobileOpen ? `${navLinks.length * 60 + 80}ms` : "0ms",
@@ -110,7 +111,7 @@ export function Header() {
             }}
             onClick={() => setMobileOpen(false)}
           >
-            無料で参加する
+            無料でアプリをはじめる
           </a>
         </nav>
       </div>

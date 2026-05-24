@@ -1,4 +1,5 @@
 import { Header } from "@/components/header"
+import { HeroParallaxBg } from "@/components/hero-parallax-bg"
 import { HeroSection } from "@/components/hero-section"
 import { VideoSection } from "@/components/video-section"
 import { AboutSection } from "@/components/about-section"
@@ -12,9 +13,11 @@ export default function Page() {
   return (
     <main>
       <Header />
-      <HeroSection />
-      <VideoSection />
-      <AboutSection />
+      <HeroParallaxBg>
+        <HeroSection />
+        <VideoSection />
+        <AboutSection />
+      </HeroParallaxBg>
       <FeaturesSection />
       <MessageSection />
       <TestimonialsSection />

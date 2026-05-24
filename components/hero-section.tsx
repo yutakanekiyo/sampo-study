@@ -1,173 +1,190 @@
 "use client"
 
-import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 
 export function HeroSection() {
   return (
-    <section className="relative flex flex-col overflow-hidden bg-primary">
-      {/* Background blob 1 - Vector 1 (left side) */}
-      <div className="pointer-events-none absolute -bottom-16 -left-32 h-[580px] w-[610px] select-none">
-        <svg
-          width="734"
-          height="699"
-          viewBox="0 0 734 699"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-full w-full"
-        >
-          <path
-            d="M98.2561 16.1558C-21.1254 65.4305 -49.2004 168.583 -81.6318 293.533C-117.873 433.161 -152.806 568.093 -42.2278 660.801C60.2879 746.749 166.605 660.801 300.416 660.801C383.044 660.801 433.378 686.208 511.998 660.801C615.247 627.434 684.894 578.736 719.298 475.883C761.324 350.242 709.698 241.748 609.652 154.844C545.557 99.1695 489.396 97.9975 408.349 72.6585C290.868 35.9289 212.03 -30.8044 98.2561 16.1558Z"
-            fill="#1D5E53"
-          />
-        </svg>
-      </div>
+    <section className="relative pt-[100px] pb-20 md:pt-[140px] md:pb-[120px]">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-6 md:px-12 lg:px-[80px]">
+        {/* Main hero row */}
+        <div className="flex flex-col gap-12 md:flex-row md:items-start md:gap-8 lg:gap-16">
+          {/* Left column */}
+          <div className="flex w-full flex-col gap-8 md:w-[55%] md:max-w-[640px] md:gap-10">
+            <h1 className="font-bold leading-[1.6] tracking-japanese text-primary text-[34px] md:text-[44px] md:leading-[1.55] lg:text-[60px] lg:leading-[1.5]">
+              ひとりじゃ
+              <br />
+              続かない勉強を、
+              <br />
+              アプリでもっと
+              <br />
+              続けやすく。
+            </h1>
 
-      {/* Background blob 2 - Vector 2 (right side) */}
-      <div className="pointer-events-none absolute -right-20 top-0 h-[580px] w-[890px] select-none">
-        <svg
-          width="1086"
-          height="712"
-          viewBox="0 0 1086 712"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-full w-full"
-        >
-          <path
-            d="M242.008 685.981C92.8324 620.016 -37.9618 494.26 10.1244 338.212C52.0786 202.064 196.268 215.415 324.852 154.421C485.04 78.4358 578.327 -23.0805 753.393 4.68549C974.049 39.6823 1184.84 192.484 1153.63 414.019C1132.44 564.385 1050.92 686.252 901.052 709.363C798.726 725.142 751.06 642.577 648.448 628.794C489.588 607.455 388.633 750.817 242.008 685.981Z"
-            fill="#1D535E"
-          />
-        </svg>
-      </div>
+            <p className="font-bold leading-[1.85] text-[#5a5a5a] text-[15px] md:text-[18px] lg:text-[20px]">
+              オンライン自習室、学習記録、コミュニティ機能で、
+              <br className="hidden md:inline" />
+              毎日の勉強を続ける為の環境をひとつに。
+              <br className="hidden md:inline" />
+              完全無料の中高生向け学習アプリ。
+            </p>
 
-      {/* ── Hero content (PC image is relative to this block) ── */}
-      <div className="relative">
-        {/* Main content */}
-        <div className="relative z-10 flex w-full items-center px-6 pt-[160px] pb-20 md:pt-[210px] md:pl-[150px] md:pr-12">
-          <div className="flex w-full flex-col items-center gap-[48px] md:items-start md:gap-[71px]">
-            <div className="flex flex-col items-center gap-[20px] text-center md:items-start md:gap-[31px] md:text-left">
-              <p className="text-[18px] font-bold leading-[40px] text-primary-foreground md:text-[26px]">
-                いつでも、どこでも、仲間と一緒に。
-              </p>
-
-              <div className="flex flex-col items-center gap-[20px] md:items-start md:gap-[31px]">
-                <h2 className="text-[24px] font-bold leading-snug text-primary-foreground md:text-[36px] md:leading-[56px] lg:text-[48px] lg:leading-[70px]">
-                  アプリで繋がる、
-                  <br />
-                  完全無料のオンライン自習室
-                </h2>
-                <h1
-                  className="font-display text-[52px] font-bold leading-none tracking-tight text-primary-foreground md:whitespace-nowrap md:text-[72px] md:leading-[100px] lg:text-[100px]"
-                  style={{ textShadow: "0 4px 20px rgba(0,0,0,0.25)" }}
-                >
-                  SAMPO STUDY
-                </h1>
-              </div>
+            {/* App Store / Google Play download badges */}
+            <div className="flex flex-wrap items-center gap-3 md:gap-4">
+              <a
+                href="#cta"
+                className="inline-flex transition-opacity hover:opacity-85"
+                aria-label="App Storeからダウンロード"
+              >
+                <Image
+                  src="/assets/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
+                  alt="App Storeからダウンロード"
+                  width={180}
+                  height={60}
+                  className="h-[52px] w-auto md:h-[56px] lg:h-[60px]"
+                />
+              </a>
+              <a
+                href="#cta"
+                className="inline-flex transition-opacity hover:opacity-85"
+                aria-label="Google Playで手に入れよう"
+              >
+                <Image
+                  src="/assets/google play.svg"
+                  alt="Google Playで手に入れよう"
+                  width={200}
+                  height={60}
+                  className="h-[52px] w-auto md:h-[56px] lg:h-[60px]"
+                />
+              </a>
             </div>
 
-            <a
-              href="https://discord.gg/VHBwskUBKZ"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex w-[340px] flex-col items-center rounded-full bg-primary-foreground px-12 py-3 shadow-[0px_5px_50px_8px_rgba(0,0,0,0.25)] transition-all hover:brightness-95 hover:shadow-2xl md:py-4"
-            >
-              <span className="text-[13px] font-bold text-primary/60 md:text-[15px]">無料で今すぐ始められる</span>
-              <span className="flex items-center gap-2 text-[20px] font-bold text-primary md:text-[25px]">
-                アプリを使い始める
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </span>
-            </a>
+            {/* 4 feature pill cards + secondary CTA (centered to the card group) */}
+            <div className="flex w-fit flex-col items-center gap-6 md:gap-8">
+              <div className="flex gap-2 md:gap-3">
+                <FeatureCard iconSrc="/assets/0yen.svg" label="完全無料" />
+                <FeatureCard iconSrc="/assets/24h.svg" label={<>24時間<br />いつでも</>} />
+                <FeatureCard iconSrc="/assets/people.svg" label="仲間と学べる" />
+                <FeatureCard iconSrc="/assets/graph.svg" label={<>学習記録で<br />成長</>} />
+              </div>
 
-            {/* Mobile: image in flow */}
-            <div className="md:hidden">
-              <Image
-                src="/images/hero-pc-vol2.png"
-                alt="SAMPO STUDYのオンライン自習室の様子"
-                width={600}
-                height={420}
-                className="h-auto w-full drop-shadow-[0_24px_60px_rgba(0,0,0,0.5)]"
-                priority
-              />
+              <a
+                href="#features"
+                className="group inline-flex items-center justify-center gap-8 rounded-full border-[3px] border-primary bg-white px-8 py-2.5 text-primary shadow-[0px_4px_14px_rgba(0,0,0,0.12)] transition-all hover:bg-primary/5 md:min-w-[210px] md:py-3 lg:min-w-[230px]"
+              >
+                <span className="text-[16px] font-bold md:text-[18px] lg:text-[20px]">機能を見る</span>
+                <Image
+                  src="/assets/arrow.svg"
+                  alt=""
+                  width={11}
+                  height={22}
+                  className="h-[18px] w-auto transition-transform group-hover:translate-x-1"
+                />
+              </a>
+            </div>
+          </div>
+
+          {/* Right column: phone mockups */}
+          <div className="relative mx-auto w-full max-w-[420px] md:mx-0 md:w-[45%] md:max-w-none">
+            <div className="relative mx-auto aspect-[1/2.05] w-[260px] sm:w-[320px] md:w-[340px] lg:w-[400px]">
+              <div className="absolute left-[-32%] top-[18%] hidden w-[78%] -rotate-[15deg] md:block">
+                <Image
+                  src="/assets/feature-03.png"
+                  alt=""
+                  width={333}
+                  height={723}
+                  className="h-auto w-full drop-shadow-[0_18px_40px_rgba(0,0,0,0.18)]"
+                />
+              </div>
+              <div className="absolute right-[-38%] top-[30%] hidden w-[80%] rotate-[28deg] md:block">
+                <Image
+                  src="/assets/feature-05.png"
+                  alt=""
+                  width={333}
+                  height={723}
+                  className="h-auto w-full drop-shadow-[0_18px_40px_rgba(0,0,0,0.18)]"
+                />
+              </div>
+              <div className="relative z-10">
+                <Image
+                  src="/assets/mockup-home.png"
+                  alt="SAMPO STUDYアプリのホーム画面"
+                  width={440}
+                  height={900}
+                  className="h-auto w-full drop-shadow-[0_24px_50px_rgba(0,0,0,0.22)]"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Desktop: PC image — absolutely positioned within this hero block */}
-        <div className="absolute right-[-20%] top-[calc(50%+65px)] z-0 hidden w-[65%] -translate-y-1/2 md:block">
-          <Image
-            src="/images/hero-pc-vol2.png"
-            alt="SAMPO STUDYのオンライン自習室の様子"
-            width={900}
-            height={630}
-            className="h-auto w-full drop-shadow-[0_24px_60px_rgba(0,0,0,0.5)]"
-            priority
-          />
-        </div>
-      </div>
-
-      {/* ── Traction ── */}
-      <div className="relative z-10 pb-[70px] pt-[40px] md:pb-[100px] md:pt-[60px]">
-        <div className="mx-auto max-w-[900px] px-6 md:px-[60px]">
-          <div className="mb-[30px] text-center md:mb-[50px]">
-            <h2 className="mb-2 text-[30px] font-bold leading-tight text-white md:text-[42px] lg:text-[52px]">
-              早慶東大合格者続出！
-            </h2>
-            <p className="text-[14px] font-bold text-white/80 md:text-[16px] lg:text-[20px]">
-              3ヶ月でこれだけ偏差値が向上しています！
+        {/* Trust cards */}
+        <div className="mt-20 flex flex-col items-center gap-6 md:mt-28 md:flex-row md:justify-center md:gap-[60px] lg:gap-[67px]">
+          <div className="flex w-full max-w-[400px] flex-col items-center justify-center gap-6 rounded-[28px] bg-white px-8 py-10 shadow-[0px_4px_20px_rgba(0,0,0,0.08)] md:h-[280px] md:rounded-[32px] md:py-12">
+            <div className="flex items-center justify-center gap-3 md:gap-4">
+              <Image
+                src="/assets/leaf-left.png"
+                alt=""
+                width={70}
+                height={120}
+                className="h-[80px] w-auto md:h-[100px]"
+              />
+              <div className="flex flex-col items-center gap-2 text-primary">
+                <p className="text-[20px] font-bold md:text-[24px]">難関大合格者</p>
+                <p className="text-[36px] font-bold leading-none md:text-[42px]">続出!</p>
+              </div>
+              <Image
+                src="/assets/leaf-right.png"
+                alt=""
+                width={70}
+                height={120}
+                className="h-[80px] w-auto md:h-[100px]"
+              />
+            </div>
+            <p className="text-[15px] font-bold text-[#5a5a5a] md:text-[18px]">
+              東大・京大・早慶上智など
             </p>
           </div>
 
-          <div className="flex flex-col items-center gap-8 md:flex-row md:justify-center md:gap-[60px] lg:gap-[120px]">
-            {/* Card 1 */}
-            <div className="relative flex h-[200px] w-[200px] items-center justify-center md:h-[230px] md:w-[230px] lg:h-[260px] lg:w-[260px]">
-              <Image src="/images/group17.svg" alt="" fill className="object-contain" />
-              <div className="relative z-10 flex flex-col items-center gap-2 text-center text-[#444]">
-                <p className="text-[14px] font-bold leading-tight md:text-[16px] lg:text-[20px]">
-                  難関大学合格者
-                </p>
-                <p className="text-[14px] font-bold md:text-[16px] lg:text-[18px]">偏差値</p>
-                <p className="font-bold leading-none">
-                  <span className="text-[30px] md:text-[36px] lg:text-[42px]">40</span>
-                  <span className="text-[20px] md:text-[24px] lg:text-[28px]"> → </span>
-                  <span className="text-[36px] md:text-[44px] lg:text-[50px]">60!</span>
-                </p>
-              </div>
+          <div className="flex w-full max-w-[400px] flex-col items-center justify-center gap-6 rounded-[28px] bg-white px-8 py-10 shadow-[0px_4px_20px_rgba(0,0,0,0.08)] md:h-[280px] md:rounded-[32px] md:py-12">
+            <div className="flex flex-col items-center gap-3">
+              <Image
+                src="/assets/hensachi-up.png"
+                alt=""
+                width={84}
+                height={64}
+                className="h-[48px] w-auto md:h-[56px]"
+              />
+              <p className="text-[22px] font-bold text-primary md:text-[26px]">偏差値</p>
+              <p className="text-[36px] font-bold leading-none text-primary md:text-[42px]">
+                最大 15 UP!
+              </p>
             </div>
-
-            {/* Card 2 */}
-            <div className="relative flex h-[200px] w-[200px] items-center justify-center md:h-[230px] md:w-[230px] lg:h-[260px] lg:w-[260px]">
-              <Image src="/images/group17.svg" alt="" fill className="object-contain" />
-              <div className="relative z-10 flex flex-col items-center gap-2 text-center text-[#444]">
-                <p className="text-[14px] font-bold leading-tight md:text-[16px] lg:text-[20px]">
-                  全体平均
-                </p>
-                <p className="text-[14px] font-bold md:text-[16px] lg:text-[18px]">偏差値</p>
-                <p className="font-bold leading-none">
-                  <span className="text-[18px] md:text-[22px] lg:text-[22px]">最大</span>
-                  <span className="text-[36px] md:text-[44px] lg:text-[48px]">15</span>
-                  <span className="text-[28px] md:text-[34px] lg:text-[38px]">UP!</span>
-                </p>
-              </div>
-            </div>
+            <p className="text-[15px] font-bold text-[#5a5a5a] md:text-[18px]">
+              多くのユーザーが成績UPを実感
+            </p>
           </div>
         </div>
       </div>
-
-      {/* Bottom wave */}
-      <div className="absolute bottom-[-2px] left-0 right-0">
-        <svg
-          viewBox="0 0 1440 80"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0 40C360 80 720 0 1080 40C1260 60 1380 60 1440 56V80H0V40Z"
-            fill="#f0f5f1"
-          />
-        </svg>
-      </div>
     </section>
+  )
+}
+
+function FeatureCard({
+  iconSrc,
+  label,
+}: {
+  iconSrc: string
+  label: React.ReactNode
+}) {
+  return (
+    <div className="flex aspect-[126/150] w-[78px] flex-col items-center justify-center gap-1.5 rounded-xl bg-white px-1.5 shadow-[0px_4px_20px_rgba(0,0,0,0.08)] md:w-[96px] md:gap-2 md:rounded-2xl">
+      <div className="flex h-7 items-center justify-center md:h-9">
+        <Image src={iconSrc} alt="" width={36} height={36} className="h-full w-auto" />
+      </div>
+      <p className="text-center text-[10px] font-bold leading-tight text-primary md:text-[12px]">
+        {label}
+      </p>
+    </div>
   )
 }
