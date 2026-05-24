@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import {
   Accordion,
@@ -40,20 +41,67 @@ export function FAQSection() {
   const { ref, isVisible } = useScrollAnimation()
 
   return (
-    <section id="faq" className="bg-secondary py-[60px] md:py-36">
+    <section
+      id="faq"
+      className="relative overflow-hidden pb-[60px] pt-[30px] md:pb-36 md:pt-20"
+    >
+      {/* Decorative background */}
+      <Image
+        src="/assets/5.svg"
+        alt=""
+        width={244}
+        height={267}
+        aria-hidden
+        className="pointer-events-none absolute left-0 top-40 z-0 w-[140px] md:left-8 md:top-56 md:w-[200px] lg:w-[244px]"
+      />
+      <Image
+        src="/assets/8.svg"
+        alt=""
+        width={465}
+        height={357}
+        aria-hidden
+        className="pointer-events-none absolute -left-16 top-80 z-0 w-[280px] md:-left-10 md:top-[420px] md:w-[420px] lg:w-[500px]"
+      />
+      <Image
+        src="/assets/9.svg"
+        alt=""
+        width={221}
+        height={410}
+        aria-hidden
+        className="pointer-events-none absolute -right-8 top-72 z-0 w-[160px] md:-right-4 md:top-72 md:w-[200px] lg:w-[240px]"
+      />
+
       <div
         ref={ref}
-        className={`mx-auto max-w-3xl px-4 transition-all duration-700 md:px-8 ${
+        className={`relative z-10 mx-auto max-w-4xl px-4 transition-all duration-700 md:px-8 ${
           isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
         }`}
       >
-        <div className="mb-10 text-center md:mb-20">
-          <p className="mb-4 text-xs font-bold uppercase tracking-widest text-primary">
+        <div className="mb-[40px] text-center md:mb-[60px] lg:mb-[80px]">
+          <p className="mb-3 text-[14px] font-bold tracking-widest text-primary md:text-[16px] lg:text-[18px]">
             FAQ
           </p>
-          <h2 className="mb-6 font-display text-3xl font-black text-primary md:text-5xl">
-            よくある質問
-          </h2>
+          <div className="flex items-center justify-center gap-4 md:gap-8 lg:gap-12">
+            <Image
+              src="/assets/dots1.svg"
+              alt=""
+              width={80}
+              height={80}
+              aria-hidden
+              className="h-[14px] w-auto shrink-0 md:h-[20px] lg:h-[26px]"
+            />
+            <h2 className="text-[28px] font-bold leading-[1.4] text-primary md:text-[40px] lg:text-[52px] lg:leading-[1.35]">
+              よくある質問
+            </h2>
+            <Image
+              src="/assets/dots2.svg"
+              alt=""
+              width={80}
+              height={80}
+              aria-hidden
+              className="h-[14px] w-auto shrink-0 md:h-[20px] lg:h-[26px]"
+            />
+          </div>
         </div>
 
         <Accordion type="single" collapsible className="space-y-4">
@@ -61,12 +109,12 @@ export function FAQSection() {
             <AccordionItem
               key={index}
               value={`item-${index}`}
-              className="rounded-2xl border border-border bg-background px-8 shadow-[0_4px_24px_rgba(0,0,0,0.06)]"
+              className="rounded-[32px] border border-border bg-background px-8 shadow-[0_4px_24px_rgba(0,0,0,0.06)] md:rounded-[34px]"
             >
-              <AccordionTrigger className="py-6 text-left text-base font-bold text-foreground hover:no-underline md:text-lg">
+              <AccordionTrigger className="py-5 text-left text-base font-bold text-[#5a5a5a] hover:no-underline md:text-lg">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="pb-6 text-sm leading-loose text-muted-foreground md:text-base">
+              <AccordionContent className="pb-6 text-base font-bold leading-loose text-primary md:text-lg">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

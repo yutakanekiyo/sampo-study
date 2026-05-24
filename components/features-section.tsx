@@ -174,7 +174,7 @@ export function FeaturesSection() {
     <section
       id="features"
       ref={sectionRef}
-      className="relative bg-white pt-[40px] pb-[80px] md:pt-[60px] md:pb-[140px] lg:pt-[80px] lg:pb-[180px]"
+      className="relative bg-white pt-[40px] pb-[24px] md:pt-[60px] md:pb-[40px] lg:pt-[80px] lg:pb-[60px]"
     >
       {/* Sticky background layer with parallax drift.
           - h-[140vh] gives a 40vh buffer so the bottom of the viewport stays

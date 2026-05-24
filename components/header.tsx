@@ -5,10 +5,10 @@ import Image from "next/image"
 import { Menu, X } from "lucide-react"
 
 const navLinks = [
-  { label: "サービス概要", href: "#about" },
-  { label: "機能紹介", href: "#features" },
-  { label: "代表メッセージ", href: "#message" },
-  { label: "よくある質問", href: "#faq" },
+  { label: "サービス概要", href: "/#about" },
+  { label: "機能紹介", href: "/#features" },
+  { label: "代表メッセージ", href: "/#message" },
+  { label: "よくある質問", href: "/#faq" },
 ]
 
 export function Header() {
@@ -37,7 +37,7 @@ export function Header() {
       >
         <div className="mx-auto flex h-[72px] max-w-[1920px] items-center justify-between px-5 md:h-[88px] md:px-10 lg:px-[72px]">
           {/* Logo */}
-          <a href="#" className="flex shrink-0 items-center">
+          <a href="/" className="flex shrink-0 items-center">
             <Image
               src="/assets/logo-sampostudy.svg"
               alt="SAMPO STUDY"
@@ -60,7 +60,7 @@ export function Header() {
               </a>
             ))}
             <a
-              href="#cta"
+              href="/#cta"
               className="ml-2 inline-flex items-center justify-center rounded-full bg-primary px-7 py-3 text-[14px] font-bold text-white shadow-[0px_5px_20px_4px_rgba(0,0,0,0.08)] transition-all hover:brightness-110 lg:px-9 lg:py-4 lg:text-[16px]"
             >
               無料でアプリをはじめる
@@ -102,7 +102,7 @@ export function Header() {
             </a>
           ))}
           <a
-            href="#cta"
+            href="/#cta"
             className="mt-4 rounded-full bg-white px-10 py-4 text-center text-[18px] font-bold text-primary transition-all duration-300 hover:opacity-90"
             style={{
               transitionDelay: mobileOpen ? `${navLinks.length * 60 + 80}ms` : "0ms",
