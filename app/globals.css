@@ -59,6 +59,14 @@ body {
   }
   html {
     scroll-behavior: smooth;
+    /* Offset anchor jumps so target sections aren't hidden behind the
+       fixed header (h-[72px] mobile / h-[88px] md+). */
+    scroll-padding-top: 88px;
+  }
+  @media (min-width: 768px) {
+    html {
+      scroll-padding-top: 104px;
+    }
   }
   body {
     @apply bg-background text-foreground;

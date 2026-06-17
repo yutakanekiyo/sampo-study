@@ -24,7 +24,7 @@ function FeatureText({ feature }: { feature: Feature }) {
           {feature.title}
           {feature.comingSoon && (
             <span className="ml-3 inline-block translate-y-[-4px] rounded-full border border-primary/30 bg-primary/5 px-3 py-1 align-middle text-[11px] font-bold text-primary md:ml-4 md:text-[13px] lg:ml-5 lg:text-[14px]">
-              開発中
+              β版
             </span>
           )}
         </h3>
@@ -88,8 +88,8 @@ const features: Feature[] = [
     number: "02",
     title: "ポモドーロ",
     description:
-      "「25分勉強＋5分休憩」と「85分勉強＋5分休憩」の2つのリズムから選べる。自分に合ったペースで集中と休憩を繰り返すことで、長時間の勉強でもダレずに続けられる。タイマーに合わせてみんなで一斉に勉強するから、一人では作れないリズムが生まれる。",
-    image: "/assets/feature-02.png",
+      "デフォルトの「25分勉強＋5分休憩」や自由な設定でリズムを選べる。自分に合ったペースで集中と休憩を繰り返すことで、長時間の勉強でもダレずに続けられる。タイマーに合わせてみんなで一斉に勉強するから、一人では作れないリズムが生まれる。",
+    image: "/assets/2.ポモドーロ.png",
     imageAlt: "ポモドーロタイマーの画面",
   },
   {
@@ -97,32 +97,32 @@ const features: Feature[] = [
     title: "学習記録",
     description:
       "勉強した時間や日数が自動で数値として記録される。「今日は何時間やった」「今週はこれだけ頑張れた」が一目でわかるから、自分の努力が見える形で積み上がっていく。モチベーションの維持に直結する機能。",
-    image: "/assets/feature-03.png",
+    image: "/assets/3.記録.png",
     imageAlt: "学習記録ダッシュボードの画面",
   },
   {
     number: "04",
-    title: "質問・解説",
+    title: "ハードモード",
     description:
-      "勉強中にわからないところがあれば、質問機能から投稿できる。同じ受験生同士で教え合える環境があるから、一人で悩んで止まる時間を減らせる。",
-    image: "/assets/feature-04.png",
-    imageAlt: "質問・解説機能の画面",
+      "ハードモードは、学習に全てを捧げる人向けに、学習への管理をアプリが徹底的に行う機能。本気の受験生だけが見られる週間ランキングで、今週の自分の位置を確かめよう。",
+    image: "/assets/4.ハードモード.png",
+    imageAlt: "ハードモードの画面",
   },
   {
     number: "05",
     title: "コミュニティ",
     description:
       "勉強ばかりだと息が詰まる。コミュニティでは、同じ目標を持つ仲間と気軽に話せる。休憩時間のちょっとした会話が、また勉強に向かうエネルギーになる。",
-    image: "/assets/feature-05.png",
+    image: "/assets/5.コミュニティ.png",
     imageAlt: "コミュニティ画面",
   },
   {
     number: "06",
-    title: "オシエルAI",
+    title: "保護者レポート機能",
     description:
-      "一人ひとりの志望校・現在の学力・残り日数に合わせて、入試当日までの学習計画を自動で組み立てるAI。日々の進捗に応じて計画を調整し、合格までの最短ルートを伴走する。",
-    image: "/assets/mockup-ai.png",
-    imageAlt: "オシエルAIの画面",
+      "もう親に「本当に勉強してるの？」と言わせない。あなたの学習記録を保護者に共有する機能。週次レポートであなたの努力を保護者に見せつけよう。",
+    image: "/assets/6.保護者.png",
+    imageAlt: "保護者レポート機能の画面",
     comingSoon: true,
   },
 ]
