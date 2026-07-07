@@ -60,7 +60,7 @@ export function Header() {
               </a>
             ))}
             <a
-              href="/#cta"
+              href="https://sampo-web.vercel.app/login?next=/"
               className="ml-2 inline-flex items-center justify-center rounded-full bg-primary px-7 py-3 text-[14px] font-bold text-white shadow-[0px_5px_20px_4px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0px_10px_28px_4px_rgba(0,0,0,0.14)] hover:brightness-110 lg:px-9 lg:py-4 lg:text-[16px]"
             >
               無料でアプリをはじめる
@@ -102,7 +102,7 @@ export function Header() {
             </a>
           ))}
           <a
-            href="/#cta"
+            href="https://sampo-web.vercel.app/login?next=/"
             className="mt-4 rounded-full bg-white px-10 py-4 text-center text-[18px] font-bold text-primary transition-all duration-300 hover:opacity-90"
             style={{
               transitionDelay: mobileOpen ? `${navLinks.length * 60 + 80}ms` : "0ms",

@@ -34,13 +34,22 @@ export function HeroSection() {
               完全無料の中高生向け学習アプリ。
             </p>
 
-            {/* App Store / Google Play download badges */}
+            {/* Primary CTA button (App Store / Google Play badges hidden for now — restore later) */}
+            <a
+              href="https://sampo-web.vercel.app/login?next=/"
+              className="will-animate animate-fade-in-up inline-flex w-fit items-center justify-center rounded-full bg-primary px-9 py-3.5 text-[16px] font-bold text-white shadow-[0px_5px_20px_4px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0px_10px_28px_4px_rgba(0,0,0,0.14)] hover:brightness-110 md:px-10 md:py-4 md:text-[18px] lg:text-[20px]"
+              style={{ animationDelay: "0.5s" }}
+            >
+              無料でアプリをはじめる
+            </a>
+
+            {/* App Store / Google Play download badges — temporarily hidden, restore when apps launch
             <div
               className="will-animate animate-fade-in-up flex flex-wrap items-center gap-3 md:gap-4"
               style={{ animationDelay: "0.5s" }}
             >
               <a
-                href="#cta"
+                href="https://sampo-web.vercel.app/login?next=/"
                 className="inline-flex transition-all duration-300 hover:-translate-y-0.5 hover:opacity-85"
                 aria-label="App Storeからダウンロード"
               >
@@ -53,7 +62,7 @@ export function HeroSection() {
                 />
               </a>
               <a
-                href="#cta"
+                href="https://sampo-web.vercel.app/login?next=/"
                 className="inline-flex transition-all duration-300 hover:-translate-y-0.5 hover:opacity-85"
                 aria-label="Google Playで手に入れよう"
               >
@@ -66,6 +75,7 @@ export function HeroSection() {
                 />
               </a>
             </div>
+            */}
 
             {/* 4 feature pill cards + secondary CTA (centered to the card group) */}
             <div className="flex w-fit flex-col items-center gap-6 md:gap-8">

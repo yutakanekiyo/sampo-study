@@ -60,10 +60,18 @@ export function CTASection({ id }: { id?: string } = {}) {
             あなたの挑戦を、SAMPO STUDYが応援します。
           </p>
 
-          {/* App Store / Google Play badges */}
+          {/* Primary CTA button (App Store / Google Play badges hidden for now — restore later) */}
+          <a
+            href="https://sampo-web.vercel.app/login?next=/"
+            className="inline-flex w-fit items-center justify-center rounded-full bg-white px-9 py-3.5 text-[16px] font-bold text-primary shadow-[0px_5px_20px_4px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0px_10px_28px_4px_rgba(0,0,0,0.18)] hover:brightness-105 md:px-10 md:py-4 md:text-[18px]"
+          >
+            無料ではじめる
+          </a>
+
+          {/* App Store / Google Play badges — temporarily hidden, restore when apps launch
           <div className="flex flex-wrap items-center gap-3 md:gap-4">
             <a
-              href="#"
+              href="https://sampo-web.vercel.app/login?next=/"
               className="inline-flex transition-all duration-300 hover:-translate-y-0.5 hover:opacity-85"
               aria-label="App Storeからダウンロード"
             >
@@ -76,7 +84,7 @@ export function CTASection({ id }: { id?: string } = {}) {
               />
             </a>
             <a
-              href="#"
+              href="https://sampo-web.vercel.app/login?next=/"
               className="inline-flex transition-all duration-300 hover:-translate-y-0.5 hover:opacity-85"
               aria-label="Google Playで手に入れよう"
             >
@@ -89,6 +97,7 @@ export function CTASection({ id }: { id?: string } = {}) {
               />
             </a>
           </div>
+          */}
         </div>
       </div>
     </section>
