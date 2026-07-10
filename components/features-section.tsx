@@ -121,9 +121,8 @@ const features: Feature[] = [
     title: "保護者レポート機能",
     description:
       "もう親に「本当に勉強してるの？」と言わせない。あなたの学習記録を保護者に共有する機能。週次レポートであなたの努力を保護者に見せつけよう。",
-    image: "/assets/6.保護者.png",
+    image: "/assets/hogosha.png",
     imageAlt: "保護者レポート機能の画面",
-    comingSoon: true,
   },
 ]
 
