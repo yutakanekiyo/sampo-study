@@ -69,7 +69,7 @@ export function CTASection({ id }: { id?: string } = {}) {
               Web版はこちら
             </a>
             <a
-              href="https://sampo-web.vercel.app/login?next=/"
+              href="https://apps.apple.com/jp/app/sampo-study/id6763615097"
               className="inline-flex transition-all duration-300 hover:-translate-y-0.5 hover:opacity-85"
               aria-label="App Storeからダウンロード"
             >
