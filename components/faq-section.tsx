@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import {
   Accordion,
@@ -9,7 +10,13 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 
-const faqs = [
+type Faq = {
+  question: string
+  answer: string
+  link?: { href: string; label: string }
+}
+
+const faqs: Faq[] = [
   {
     question: "本当に無料で使えますか？",
     answer:
@@ -34,6 +41,12 @@ const faqs = [
     question: "どこからお金を得て、運営しているんですか？",
     answer:
       "広告費という名目で、企業様からお金をいただいて運営しております。",
+  },
+  {
+    question: "保護者レポートについて詳しく教えてください",
+    answer:
+      "保護者レポートは、お子さまの学習時間・学習日数・継続の様子を、毎週保護者の方にお届けする機能です。「勉強してるの？」と聞かなくても、頑張りがちゃんと分かる安心をお届けします。料金プランや保証など、詳しくは保護者向けページをご覧ください。",
+    link: { href: "/parents", label: "保護者連携の詳細はこちら" },
   },
 ]
 
@@ -115,7 +128,16 @@ export function FAQSection() {
                 {faq.question}
               </AccordionTrigger>
               <AccordionContent className="pb-6 text-base font-bold leading-loose text-primary md:text-lg">
-                {faq.answer}
+                <p>{faq.answer}</p>
+                {faq.link && (
+                  <Link
+                    href={faq.link.href}
+                    className="group mt-4 inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-6 py-3 text-[14px] font-bold text-primary transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary hover:text-white hover:shadow-[0px_8px_20px_rgba(44,100,87,0.2)] md:text-[15px]"
+                  >
+                    {faq.link.label}
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                  </Link>
+                )}
               </AccordionContent>
             </AccordionItem>
           ))}

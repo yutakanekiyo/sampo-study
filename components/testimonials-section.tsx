@@ -1,9 +1,19 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
-const testimonials = [
+type Testimonial = {
+  icon: string
+  summary: string
+  body: string[]
+  author: string
+  result: string | null
+  link?: { href: string; label: string }
+}
+
+const testimonials: Testimonial[] = [
   {
     icon: "/assets/user1.png",
     summary: "家でも集中できるようになり、一人で抱え込む苦しさが減った。",
@@ -28,6 +38,7 @@ const testimonials = [
     ],
     author: "保護者（高3・母）",
     result: null,
+    link: { href: "/parents", label: "保護者連携の詳細はこちら" },
   },
 ]
 
@@ -114,6 +125,16 @@ export function TestimonialsSection() {
                       <p key={j}>{paragraph}</p>
                     ))}
                   </div>
+
+                  {t.link && (
+                    <Link
+                      href={t.link.href}
+                      className="group mt-5 inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-5 py-2.5 text-[13px] font-bold text-primary transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary hover:text-white hover:shadow-[0px_8px_20px_rgba(44,100,87,0.2)] md:px-6 md:py-3 md:text-[14px]"
+                    >
+                      {t.link.label}
+                      <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                    </Link>
+                  )}
                 </div>
               ))}
             </div>

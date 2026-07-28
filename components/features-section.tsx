@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 
@@ -11,6 +12,7 @@ type Feature = {
   image: string
   imageAlt: string
   comingSoon?: boolean
+  link?: { href: string; label: string }
 }
 
 function FeatureText({ feature }: { feature: Feature }) {
@@ -32,6 +34,15 @@ function FeatureText({ feature }: { feature: Feature }) {
       <p className="whitespace-pre-line font-bold leading-[1.9] text-[#5a5a5a] text-[14px] md:text-[16px] lg:text-[18px] lg:leading-[2]">
         {feature.description}
       </p>
+      {feature.link && (
+        <Link
+          href={feature.link.href}
+          className="group mt-5 inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-6 py-3 text-[14px] font-bold text-primary transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary hover:text-white hover:shadow-[0px_8px_20px_rgba(44,100,87,0.2)] md:mt-6 md:text-[15px] lg:text-[16px]"
+        >
+          {feature.link.label}
+          <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+        </Link>
+      )}
     </div>
   )
 }
@@ -123,6 +134,7 @@ const features: Feature[] = [
       "もう親に「本当に勉強してるの？」と言わせない。あなたの学習記録を保護者に共有する機能。週次レポートであなたの努力を保護者に見せつけよう。",
     image: "/assets/hogosha.png",
     imageAlt: "保護者レポート機能の画面",
+    link: { href: "/parents", label: "保護者連携の詳細はこちら" },
   },
 ]
 
