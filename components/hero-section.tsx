@@ -34,7 +34,7 @@ export function HeroSection() {
               完全無料の中高生向け学習アプリ。
             </p>
 
-            {/* Primary CTA button + App Store badge (Google Play hidden for now — restore later) */}
+            {/* Primary CTA button + App Store / Google Play badges */}
             <div
               className="will-animate animate-fade-in-up flex flex-wrap items-center gap-3 md:gap-4"
               style={{ animationDelay: "0.5s" }}
@@ -58,23 +58,20 @@ export function HeroSection() {
                   className="h-[52px] w-auto md:h-[56px] lg:h-[60px]"
                 />
               </a>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.sampostudy.app&pli=1"
+                className="inline-flex transition-all duration-300 hover:-translate-y-0.5 hover:opacity-85"
+                aria-label="Google Playで手に入れよう"
+              >
+                <Image
+                  src="/assets/google play.svg"
+                  alt="Google Playで手に入れよう"
+                  width={200}
+                  height={60}
+                  className="h-[52px] w-auto md:h-[56px] lg:h-[60px]"
+                />
+              </a>
             </div>
-
-            {/* Google Play badge — temporarily hidden, restore when the Android app launches
-            <a
-              href="https://sampo-web.vercel.app/login?next=/"
-              className="inline-flex transition-all duration-300 hover:-translate-y-0.5 hover:opacity-85"
-              aria-label="Google Playで手に入れよう"
-            >
-              <Image
-                src="/assets/google play.svg"
-                alt="Google Playで手に入れよう"
-                width={200}
-                height={60}
-                className="h-[52px] w-auto md:h-[56px] lg:h-[60px]"
-              />
-            </a>
-            */}
 
             {/* 4 feature pill cards + secondary CTA (centered to the card group) */}
             <div className="flex w-fit flex-col items-center gap-6 md:gap-8">
